@@ -1,0 +1,124 @@
+@import '../common/common';
+@import '../common/mixins';
+section.sobre{
+    @include reset_proportions;
+    background-color: $base_color;
+    overflow-x: scroll;
+    position: relative;
+    
+    div.container{
+        width: calc(5 * 100vw);
+        display: flex;
+        flex-direction: row;
+        z-index: 2;
+        position: relative;
+
+        div.page{
+            @include reset_proportions;
+            display: flex;
+            flex-direction: column;
+            font-family: 'Josefin Sans';
+
+            div.top{
+                width: inherit;
+                height: 100px;
+                padding: 16px;
+                display: flex;
+                align-items: center;
+                font-size: 25px;
+                letter-spacing: 8%;
+            }
+            
+            div.middle{
+                width: inherit;
+                background-color: white;
+                height: calc(100vh - (100px + 132px));
+                padding: 16px;
+                font-size: 20px;
+                font-weight: 300;
+                // letter-spacing: 8%;
+                display: flex;
+                flex-direction: column;
+
+                p.paragraph{
+                    margin: 25px auto;
+                }
+
+                img.pageImage{
+                    align-self: center;
+                    animation: rotate 30s linear infinite;
+                }
+
+                @keyframes rotate {
+                    0%{transform: rotate(0deg);}
+                    100%{transform: rotate(360deg);}
+                }
+            }
+
+            div.bottom{
+                width: inherit;
+                height: 132px;
+                padding: 16px;
+                display: flex;
+                align-items: center;
+                font-size: 18px;
+
+                p.actionSentence{
+                    font-weight: 300;
+                    letter-spacing: 4%;
+                    border-radius: 4px;
+                    height: fit-content;
+                    padding: 16px;
+                    background: rgba(255, 255, 0, 0.16);
+                    border: 0.5px solid #FFFF00;
+                    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+                    backdrop-filter: blur(3.5px);
+                }
+            }
+        }
+    }
+
+    div.square {
+        width:16px;
+        height:16px;
+        position:absolute;
+        right: calc(64px - 16px);
+        top: calc(64px - 16px);
+        background-color: $base_color;
+        z-index: 1;
+    }
+
+    div.topBgBar{
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        width: calc((5 * 100vw));
+        height: 100px;
+        z-index: 1;
+        background: rgb(255,255,0);
+        background: linear-gradient(90deg, rgba(255,255,0,1) 0%, rgba(0,0,0,1) 100%);
+    }
+
+    div.bottomBgBar{
+        position: absolute;
+        bottom: 0px;
+        left: 0px;
+        width: calc((5 * 100vw));
+        height: 132px;
+        z-index: 1;
+        background: rgb(255,255,0);
+        background: linear-gradient(90deg, rgba(255,255,0,1) 0%, rgba(0,0,0,1) 100%);
+    }
+    
+    div.topBar{
+        position: absolute;
+        top: 64px;
+        left: 16px;
+        width: calc((5 * 100vw) - 64px);
+        height: 2px;
+        z-index: 2;
+        background: rgb(255,255,0);
+        background: linear-gradient(-90deg, rgba(255,255,0,1) 0%, rgba(0,0,0,1) 100%);
+    }
+
+}
