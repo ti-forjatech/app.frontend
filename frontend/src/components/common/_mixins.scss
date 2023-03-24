@@ -1,0 +1,10 @@
+@mixin reset_height(){
+    height: 100vh;
+}
+@mixin reset_width(){
+    width: 100vw;
+}
+@mixin reset_proportions(){
+    @include reset_height;
+    @include reset_width;
+}
