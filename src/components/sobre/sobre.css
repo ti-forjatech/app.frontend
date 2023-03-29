@@ -38,6 +38,46 @@ section.sobre div.container div.page {
       -ms-flex-direction: column;
           flex-direction: column;
   font-family: 'Josefin Sans';
+  font-size: 1em;
+}
+
+section.sobre div.container div.page:first-child div.top {
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+section.sobre div.container div.page:nth-child(2) div.top svg.seta_dir, section.sobre div.container div.page:nth-child(3) div.top svg.seta_dir {
+  fill: #FFFF00;
+}
+
+section.sobre div.container div.page:nth-child(4) div.middle {
+  padding-right: 0;
+  border-right: solid 8px black;
+}
+
+section.sobre div.container div.page:nth-child(4) div.middle ul.paragraphs li.paragraph:last-child {
+  font-size: 1.2rem;
+  font-weight: bold;
+  background-color: black;
+  color: #FFFF00;
+  padding: 8px;
+}
+
+section.sobre div.container div.page:nth-child(4) div.top svg.seta_dir {
+  fill: none;
+  stroke-width: 1;
+  stroke: #FFFF00;
+}
+
+section.sobre div.container div.page:last-child div.middle {
+  background: black;
+  color: white;
+}
+
+section.sobre div.container div.page:last-child div.top svg.seta_dir {
+  display: none;
+  fill: none;
 }
 
 section.sobre div.container div.page div.top {
@@ -47,10 +87,13 @@ section.sobre div.container div.page div.top {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  font-size: 25px;
+  font-size: 1.5rem;
   letter-spacing: 8%;
 }
 
@@ -59,7 +102,6 @@ section.sobre div.container div.page div.middle {
   background-color: white;
   height: calc(100vh - (100px + 132px));
   padding: 16px;
-  font-size: 20px;
   font-weight: 300;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -70,8 +112,13 @@ section.sobre div.container div.page div.middle {
           flex-direction: column;
 }
 
-section.sobre div.container div.page div.middle p.paragraph {
-  margin: 25px auto;
+section.sobre div.container div.page div.middle ul.paragraphs {
+  list-style: none;
+  font-size: 1.2rem;
+}
+
+section.sobre div.container div.page div.middle ul.paragraphs li.paragraph {
+  margin: 24px 0;
 }
 
 section.sobre div.container div.page div.middle img.pageImage {
@@ -80,6 +127,18 @@ section.sobre div.container div.page div.middle img.pageImage {
       align-self: center;
   -webkit-animation: rotate 30s linear infinite;
           animation: rotate 30s linear infinite;
+}
+
+section.sobre div.container div.page div.middle ul.blackBlock {
+  list-style: none;
+  height: 100%;
+  font-size: 1rem;
+}
+
+section.sobre div.container div.page div.middle ul.blackBlock li.blockItem {
+  list-style-image: url("./valid_forjatech.png");
+  margin: 32px auto;
+  list-style-position: inside;
 }
 
 @-webkit-keyframes rotate {
@@ -131,6 +190,10 @@ section.sobre div.container div.page div.bottom p.actionSentence {
           box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   -webkit-backdrop-filter: blur(3.5px);
           backdrop-filter: blur(3.5px);
+}
+
+section.sobre div.container div.page div.bottom p.actionSentence footer.sentenceText_dark_bg {
+  color: #FFFF00;
 }
 
 section.sobre div.square {

@@ -7,10 +7,10 @@ export default function Hero() {
             <p className="slogan">Desenvolvimento de software personalizado</p>
             <p className="subfrase">Nosso trabalho é desenvolver soluções que podem potencializar o seu negócio.</p>
             
-            <p className="subfrase enfase">Gostaria de saber mais?</p>
+            {/* <p className="subfrase">Gostaria de saber mais?</p>
             <div className="btnOrganizer">
                 <button className="btn cta">Confira!</button>
-            </div>
+            </div> */}
 
             <div className="heroContent">
             {/** Importar e Inserir aqui o conteudo do hero */}

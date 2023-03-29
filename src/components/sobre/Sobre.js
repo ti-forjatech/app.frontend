@@ -1,5 +1,6 @@
 import React from 'react';
 import vector_forjatech from './vector_forjatech.svg'
+import setaDir from './seta_dir.svg'
 import './sobre.css';
 
 export default function Sobre() {
@@ -25,56 +26,105 @@ export default function Sobre() {
         {
             pageNumber: 4,
             pageTitle: '',
-            content: `Com o avanço tecnológico que presenciamos nos últimos anos, é importante ressaltar a importância da área de TI para os diversos empreendimentos. \n Trazendo uma visão técnica para o negócio dos nossos clientes, nossa proposta é guiar os setores de comércio e serviços locais por estratégias eficientes de gestão de dados. \n Estas estratégias, permitem -> `,
+            content: `Com o avanço tecnológico que presenciamos nos últimos anos, é importante ressaltar a importância da área de TI para os diversos empreendimentos. \n Trazendo uma visão técnica para o negócio dos nossos clientes, nossa proposta é guiar os setores de comércio e serviços locais por estratégias eficientes de gestão de dados. \n Estas estratégias, permitem?! --------👉🏽`,
             footer: '“Desenvolver um sistema ou website, é na sua maior parte técnica. Mas, é também arte em seus momentos.”'
         },
         {
             pageNumber: 5,
             pageTitle: '',
-            content: 'Pagina 5',
-            footer: 'Footer'
+            content: 'Atender melhor seus clientes. \n Aumentar o alcance da empresa. \n Atrair clientela nova. \n Diminuir o custo de operações. \n Coletar e organizar dados do negócio. \n Visualizar processos.',
+            footer: ''
         },
     ]
 
     const paragraphMaker = (content, index) => {
-        return <p className="paragraph" key={index}>{content}</p>;
+        return <li className="paragraph" key={index}>{content}</li>;
     }
 
-    const imageMaker = (src) => {
-        return <img className="pageImage" src={src} alt="ForjaTech logo." />
+    const imageMaker = (src, className, alt) => {
+        return <img className={className} src={src} alt={alt} />
     }
 
-    const template = (pageNumber, pageTitle, content, footer, pageImage='') => { 
-        let paragraphs = undefined
-        if(typeof content == 'object'){
-            paragraphs = content.map( (paragraph) => {
-                return paragraphMaker(paragraph)
-            })
+    const blockItemMaker = (content, index) => {
+        return <li className="blockItem" key={index}>{content}</li>
+    }
+
+    const blockMaker = (content) => {
+        const items = content.map((item, index) => {
+            return blockItemMaker(item, index)
+        })
+        return <ul className="blackBlock">{items}</ul>
+    }
+
+    const footerMaker = (footerText, pageNumber) => {
+        if(footerText !== ''){
+            let sentenceText = 'sentenceText'
+
+            if(pageNumber >= 3){
+                sentenceText = 'sentenceText_dark_bg'
+            }
+
+            return (
+            <p className="actionSentence">
+                <footer className={sentenceText}>
+                    {footerText}
+                </footer>
+            </p>
+            )
+        }
+    }
+
+    const template = (pageNumber, pageTitle, paragraphs, footer, pageImage='', setaDir_temp={setaDir}) => {
+        let paragraphs_temp = undefined
+        let block = undefined
+        let footer_temp = undefined
+        if(typeof paragraphs == 'object'){
+            if(pageNumber < 5){
+                paragraphs_temp = paragraphs.map( (paragraph) => {
+                    return paragraphMaker(paragraph)
+                })
+            }
 
             if(pageNumber === 2){
-                pageImage = imageMaker(vector_forjatech)
+                pageImage = imageMaker(vector_forjatech, "pageImage", "ForjaTech logo.")
             }
-        } else if(typeof content == 'string'){
-            return content
-        }
 
-        if(pageNumber === 5){
-                
+            if(pageNumber === 5){
+                block = blockMaker(paragraphs)
+            }
+
+            if(footer !== ''){
+                footer_temp = footerMaker(footer, pageNumber)
+            }
+
+            setaDir_temp = imageMaker(setaDir, "setaDir", "Seta para a direita. Indicativo de para deslizar a pagina.")
+
+        } else if(typeof paragraphs == 'string'){
+            if(paragraphs === 'valores'){
+                block = blockMaker(paragraphs)
+            }
+
+            paragraphs_temp = paragraphs
         }
         
         return (
-        <div id={pageNumber} className="page" key={pageTitle}>
+        <div id={pageNumber} className="page">
             <div className="top">
                 {pageTitle}
+                <svg class="seta_dir" width="11" height="18" viewBox="0 0 11 18" xmlns="http://www.w3.org/2000/svg">
+<path d="M4.09586 17.2572L10.2995 10.7602C10.5216 10.5282 10.6977 10.2525 10.8179 9.94906C10.9381 9.6456 11 9.3203 11 8.99177C11 8.66324 10.9381 8.33793 10.8179 8.03448C10.6977 7.73102 10.5216 7.45537 10.2995 7.2233L4.09586 0.726378C2.58686 -0.82887 0 0.274855 0 2.50739V15.4761C0 17.7338 2.58686 18.8375 4.09586 17.2572Z" />
+</svg>
+
             </div>
             <div className="middle">
-                {paragraphs}
+                <ul className='paragraphs'>
+                    {paragraphs_temp}
+                </ul>
                 {pageImage}
+                {block}
             </div>
             <div className="bottom">
-                <p className="actionSentence">
-                    {footer}
-                </p>
+                {footer_temp}
             </div>
         </div>
         )
@@ -82,11 +132,14 @@ export default function Sobre() {
 
     const pages_templates = pages.map((page) => {
         let temp_template = undefined
-        if(typeof page.content == 'string' && page.content.length > 50) {
+        if(typeof page.content == 'string'){
             const paragraphs = page.content.split('\n')
-            temp_template = template(page.pageNumber, page.pageTitle, paragraphs, page.footer)
+            if(page.content.length > 50) {
+                temp_template = template(page.pageNumber, page.pageTitle, paragraphs, page.footer)
+            } else {
+                temp_template = template(page.pageNumber, page.pageTitle, paragraphs, page.footer)
+            }
         }
-
         return temp_template
     })
 

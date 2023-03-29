@@ -28,17 +28,13 @@ div.hero{
         line-height: 32px;
         font-size: 18px;
         text-align: left;
-        margin: 16px auto;
+        margin: 16px 0;
         z-index: 2;
-    }
-
-    p.enfase {
-        color: $base_color;
     }
 
     .btnOrganizer{
         display: flex;
-        justify-content:center;
+        justify-content:baseline;
         z-index: 2;
 
         button.cta{
