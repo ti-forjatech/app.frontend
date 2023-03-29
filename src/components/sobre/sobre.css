@@ -56,7 +56,7 @@ section.sobre div.container div.page:nth-child(4) div.middle {
   border-right: solid 8px black;
 }
 
-section.sobre div.container div.page:nth-child(4) div.middle ul.paragraphs li.paragraph:last-child {
+section.sobre div.container div.page:nth-child(4) div.middle div.paragraphs p.paragraph:last-child {
   font-size: 1.2rem;
   font-weight: bold;
   background-color: black;
@@ -102,7 +102,7 @@ section.sobre div.container div.page div.middle {
   background-color: white;
   height: calc(100vh - (100px + 132px));
   padding: 16px;
-  font-weight: 300;
+  font-weight: regular;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -112,13 +112,29 @@ section.sobre div.container div.page div.middle {
           flex-direction: column;
 }
 
-section.sobre div.container div.page div.middle ul.paragraphs {
+section.sobre div.container div.page div.middle div.paragraphs {
+  -ms-flex-preferred-size: 0;
+      flex-basis: 0;
+  -ms-flex-negative: 1;
+      flex-shrink: 1;
+  -webkit-box-flex: 0;
+      -ms-flex-positive: 0;
+          flex-grow: 0;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   list-style: none;
-  font-size: 1.2rem;
+  font-size: 1.05em;
 }
 
-section.sobre div.container div.page div.middle ul.paragraphs li.paragraph {
-  margin: 24px 0;
+section.sobre div.container div.page div.middle div.paragraphs p.paragraph {
+  line-height: 2rem;
+  margin: 16px 0;
 }
 
 section.sobre div.container div.page div.middle img.pageImage {
@@ -132,35 +148,35 @@ section.sobre div.container div.page div.middle img.pageImage {
 section.sobre div.container div.page div.middle ul.blackBlock {
   list-style: none;
   height: 100%;
-  font-size: 1rem;
+  font-size: 1.1rem;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
 }
 
 section.sobre div.container div.page div.middle ul.blackBlock li.blockItem {
   list-style-image: url("./valid_forjatech.png");
-  margin: 32px auto;
   list-style-position: inside;
+  margin: 32px 0;
+  height: 32px;
+  position: relative;
 }
 
-@-webkit-keyframes rotate {
-  0% {
-    -webkit-transform: rotate(0deg);
-            transform: rotate(0deg);
-  }
-  100% {
-    -webkit-transform: rotate(360deg);
-            transform: rotate(360deg);
-  }
+section.sobre div.container div.page div.middle ul.blackBlock li.blockItem div.blockItemContainer {
+  position: absolute;
+  top: middle;
+  left: calc(32px + 8px);
+  height: 32px;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
-@keyframes rotate {
-  0% {
-    -webkit-transform: rotate(0deg);
-            transform: rotate(0deg);
-  }
-  100% {
-    -webkit-transform: rotate(360deg);
-            transform: rotate(360deg);
-  }
+section.sobre div.container div.page div.middle ul.blackBlock li.blockItem div.blockItemContainer p.blockItemText {
+  letter-spacing: 0.08rem;
 }
 
 section.sobre div.container div.page div.bottom {
@@ -194,6 +210,87 @@ section.sobre div.container div.page div.bottom p.actionSentence {
 
 section.sobre div.container div.page div.bottom p.actionSentence footer.sentenceText_dark_bg {
   color: #FFFF00;
+}
+
+section.sobre div.container div.page div.bottom p.actionSentence_no_bg {
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 16px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+section.sobre div.container div.page div.bottom p.actionSentence_no_bg button.projectsButton {
+  background: #FFFF00;
+  padding: 8px;
+  -webkit-animation: pulse 4s linear infinite;
+          animation: pulse 4s linear infinite;
+}
+
+section.sobre div.container div.page div.bottom p.actionSentence_no_bg button.projectsButton img.logoButton {
+  width: 64px;
+  height: 64px;
+  background: transparent;
+  -webkit-animation: rotate 10s linear infinite;
+          animation: rotate 10s linear infinite;
+}
+
+@-webkit-keyframes rotate {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes rotate {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@-webkit-keyframes pulse {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  50% {
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  50% {
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
 }
 
 section.sobre div.square {

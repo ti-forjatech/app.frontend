@@ -38,8 +38,8 @@ section.sobre{
                 div.middle{
                     padding-right:0;
                     border-right: solid 8px black;
-                    ul.paragraphs{
-                        li.paragraph{
+                    div.paragraphs{
+                        p.paragraph{
                             &:last-child{
                                 font-size:1.2rem;
                                 font-weight: bold;
@@ -90,17 +90,23 @@ section.sobre{
                 background-color: white;
                 height: calc(100vh - (100px + 132px));
                 padding: 16px;
-                font-weight: 300;
-                // letter-spacing: 8%;
+                font-weight: regular;
                 display: flex;
                 flex-direction: column;
 
-                ul.paragraphs{
+                div.paragraphs{
+                    flex-basis:0;
+                    flex-shrink:1;
+                    flex-grow:0;
+                    height: 100%;
+                    display: flex;
+                    flex-direction:column;
                     list-style: none;
-                    font-size:1.2rem;
+                    font-size:1.05em;
 
-                    li.paragraph{
-                        margin: 24px 0;
+                    p.paragraph{
+                        line-height:2rem;
+                        margin: 16px 0;
                     }
                 }
 
@@ -112,20 +118,29 @@ section.sobre{
                 ul.blackBlock{
                     list-style: none;
                     height: 100%;
-                    font-size:1rem;
+                    font-size:1.1rem;
+                    flex-grow:1;
 
                     li.blockItem{
                         list-style-image: url('./valid_forjatech.png');
-                        margin: 32px auto;
                         list-style-position: inside;
-                        // display: flex;
-                        // align-items: center;
-                    }
-                }
+                        margin: 32px 0;
+                        height:32px;
+                        position:relative;
 
-                @keyframes rotate {
-                    0%{transform: rotate(0deg);}
-                    100%{transform: rotate(360deg);}
+                        div.blockItemContainer{
+                            position: absolute;
+                            top:middle;
+                            left:calc(32px + 8px);
+                            height:32px;
+                            display:inline-flex;
+                            align-items:center;
+
+                            p.blockItemText{
+                                letter-spacing: 0.08rem;
+                            }
+                        }
+                    }
                 }
             }
 
@@ -152,6 +167,37 @@ section.sobre{
                         color: $base_color;
                     }
                 }
+
+                p.actionSentence_no_bg{
+                    height: fit-content;
+                    width:100%;
+                    display:flex;
+                    padding: 16px;
+                    justify-content: center;
+
+                    button.projectsButton{
+                        background:$base_color;
+                        padding: 8px;
+                        animation: pulse 4s linear infinite;
+                        img.logoButton{
+                            width:64px;
+                            height:64px;
+                            background:transparent;
+                            animation: rotate 10s linear infinite;
+                        }
+                    }
+                }
+            }
+
+            @keyframes rotate {
+                0%{transform: rotate(0deg);}
+                100%{transform: rotate(360deg);}
+            }
+
+            @keyframes pulse {
+                0%{transform: scale(1);}
+                50%{transform: scale(1.1);}
+                100%{transform: scale(1);}
             }
         }
     }

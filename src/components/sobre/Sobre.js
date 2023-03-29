@@ -33,12 +33,12 @@ export default function Sobre() {
             pageNumber: 5,
             pageTitle: '',
             content: 'Atender melhor seus clientes. \n Aumentar o alcance da empresa. \n Atrair clientela nova. \n Diminuir o custo de operações. \n Coletar e organizar dados do negócio. \n Visualizar processos.',
-            footer: ''
+            footer: 'projetos_'
         },
     ]
 
     const paragraphMaker = (content, index) => {
-        return <li className="paragraph" key={index}>{content}</li>;
+        return <p className="paragraph" key={index}>{content}</p>;
     }
 
     const imageMaker = (src, className, alt) => {
@@ -46,7 +46,15 @@ export default function Sobre() {
     }
 
     const blockItemMaker = (content, index) => {
-        return <li className="blockItem" key={index}>{content}</li>
+        return (
+            <li className="blockItem" key={index}>
+                <div className="blockItemContainer">
+                    <p className="blockItemText">
+                        {content}
+                    </p>
+                </div>
+            </li>
+        )
     }
 
     const blockMaker = (content) => {
@@ -57,7 +65,7 @@ export default function Sobre() {
     }
 
     const footerMaker = (footerText, pageNumber) => {
-        if(footerText !== ''){
+        if(footerText !== '' && footerText !== 'projetos_'){
             let sentenceText = 'sentenceText'
 
             if(pageNumber >= 3){
@@ -69,6 +77,14 @@ export default function Sobre() {
                 <footer className={sentenceText}>
                     {footerText}
                 </footer>
+            </p>
+            )
+        } else if(footerText === 'projetos_'){
+            return (
+            <p className="actionSentence_no_bg">
+                <button className="projectsButton">
+                    <img className="logoButton" src={vector_forjatech} alt="Logo" />
+                </button>
             </p>
             )
         }
@@ -113,13 +129,12 @@ export default function Sobre() {
                 {pageTitle}
                 <svg class="seta_dir" width="11" height="18" viewBox="0 0 11 18" xmlns="http://www.w3.org/2000/svg">
 <path d="M4.09586 17.2572L10.2995 10.7602C10.5216 10.5282 10.6977 10.2525 10.8179 9.94906C10.9381 9.6456 11 9.3203 11 8.99177C11 8.66324 10.9381 8.33793 10.8179 8.03448C10.6977 7.73102 10.5216 7.45537 10.2995 7.2233L4.09586 0.726378C2.58686 -0.82887 0 0.274855 0 2.50739V15.4761C0 17.7338 2.58686 18.8375 4.09586 17.2572Z" />
-</svg>
-
+                </svg>
             </div>
             <div className="middle">
-                <ul className='paragraphs'>
+                <div className='paragraphs'>
                     {paragraphs_temp}
-                </ul>
+                </div>
                 {pageImage}
                 {block}
             </div>
