@@ -1,5 +1,4 @@
 import React from 'react';
-import bg from './hero_bg_forjatech.png'
 import './hero.css'
 
 export default function Hero() {
