@@ -1,0 +1,46 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100;300;400;500;700&display=swap");
+button.btn {
+  padding: 8px;
+  margin: 4px;
+  width: 200px;
+  border-radius: 4px;
+}
+
+section.skills {
+  height: 100vh;
+  width: 100vw;
+  font-size: 1em;
+  font-family: 'Josefin Sans';
+}
+
+section.skills div.container {
+  padding: 16px;
+}
+
+section.skills div.container h1.sectionTitle {
+  font-size: 2rem;
+  font-weight: medium;
+}
+
+section.skills div.container p.resume {
+  font-weight: light;
+  font-size: 1rem;
+  margin: 16px 0;
+}
+
+section.skills div.container h2.subtitle {
+  font-weight: regular;
+  font-size: 1.4rem;
+  text-decoration: underline;
+}
+
+section.skills div.container ul {
+  list-style: none;
+  margin: 8px 0;
+}
+
+section.skills div.container ul li {
+  font-weight: light;
+  font-size: 1rem;
+}
+/*# sourceMappingURL=skills.css.map */
