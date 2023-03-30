@@ -1,14 +1,34 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './footer.css';
 import curriculo from './Thyéz - curriculo.pdf'
 
-// linkedin https://www.linkedin.com/in/engsofthyezoliveira/
-// github https://github.com/thyezoliveira
-// zap https://wa.link/1twezw
-
 export default function Footer(){
+    const [btnShow, setBtnShow] = useState('btnTopo')
+
+    const btnTopo = (e) => {
+        window.scrollTo({top:0, behavior: 'smooth'})
+    }
+
+    window.addEventListener('scroll', (e) =>{
+        let scrollTop = e.target.scrollingElement.scrollTop
+        if(scrollTop >= 1580){
+            setBtnShow('btnTopoShow')
+        } else {
+            setBtnShow('btnTopo')
+        }
+    })
+
     return (
         <section className="footer">
+            <button id='btnTopo' 
+                    className={btnShow === 'btnTopo' ? 'btnTopo' : 'btnTopo btnTopoShow'}
+                    onClick={btnTopo}
+                    >
+                <svg className="btnTopo" width="36" height="23" viewBox="0 0 36 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M36 23L18 0L0 23L18 16L36 23Z" fill="black"/>
+                </svg>
+            </button>
+
             <div className="container">
                 <h2>Contato</h2>
                 <div className="organizer">
