@@ -73,15 +73,15 @@ export default function Sobre() {
             }
 
             return (
-            <p className="actionSentence">
-                <footer className={sentenceText}>
+            <p className="actionSentence" key={pageNumber}>
+                <span className={sentenceText}>
                     {footerText}
-                </footer>
+                </span>
             </p>
             )
         } else if(footerText === 'projetos_'){
             return (
-            <p className="actionSentence_no_bg">
+            <p className="actionSentence_no_bg" key={pageNumber}>
                 <button className="projectsButton">
                     <img className="logoButton" src={vector_forjatech} alt="Logo" />
                 </button>
@@ -90,14 +90,14 @@ export default function Sobre() {
         }
     }
 
-    const template = (pageNumber, pageTitle, paragraphs, footer, pageImage='', setaDir_temp={setaDir}) => {
+    const template = (pageNumber, pageTitle, paragraphs, footer, page_index, pageImage='', setaDir_temp={setaDir}) => {
         let paragraphs_temp = undefined
         let block = undefined
         let footer_temp = undefined
         if(typeof paragraphs == 'object'){
             if(pageNumber < 5){
-                paragraphs_temp = paragraphs.map( (paragraph) => {
-                    return paragraphMaker(paragraph)
+                paragraphs_temp = paragraphs.map( (paragraph, index) => {
+                    return paragraphMaker(paragraph, index)
                 })
             }
 
@@ -124,10 +124,10 @@ export default function Sobre() {
         }
         
         return (
-        <div id={pageNumber} className="page">
+        <div id={pageNumber} className="page" key={page_index}>
             <div className="top">
                 {pageTitle}
-                <svg class="seta_dir" width="11" height="18" viewBox="0 0 11 18" xmlns="http://www.w3.org/2000/svg">
+                <svg className="seta_dir" width="11" height="18" viewBox="0 0 11 18" xmlns="http://www.w3.org/2000/svg">
 <path d="M4.09586 17.2572L10.2995 10.7602C10.5216 10.5282 10.6977 10.2525 10.8179 9.94906C10.9381 9.6456 11 9.3203 11 8.99177C11 8.66324 10.9381 8.33793 10.8179 8.03448C10.6977 7.73102 10.5216 7.45537 10.2995 7.2233L4.09586 0.726378C2.58686 -0.82887 0 0.274855 0 2.50739V15.4761C0 17.7338 2.58686 18.8375 4.09586 17.2572Z" />
                 </svg>
             </div>
@@ -145,14 +145,14 @@ export default function Sobre() {
         )
     }
 
-    const pages_templates = pages.map((page) => {
+    const pages_templates = pages.map((page, index) => {
         let temp_template = undefined
         if(typeof page.content == 'string'){
             const paragraphs = page.content.split('\n')
             if(page.content.length > 50) {
-                temp_template = template(page.pageNumber, page.pageTitle, paragraphs, page.footer)
+                temp_template = template(page.pageNumber, page.pageTitle, paragraphs, page.footer, index)
             } else {
-                temp_template = template(page.pageNumber, page.pageTitle, paragraphs, page.footer)
+                temp_template = template(page.pageNumber, page.pageTitle, paragraphs, page.footer, index)
             }
         }
         return temp_template
