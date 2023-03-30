@@ -36,7 +36,7 @@ section.skills div.container h1.sectionTitle {
 section.skills div.container p.resume {
   font-weight: light;
   font-size: 1rem;
-  margin: auto 0;
+  margin: 16px 0;
 }
 
 section.skills div.container h2.subtitle {
