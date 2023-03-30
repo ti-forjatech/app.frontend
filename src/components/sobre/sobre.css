@@ -12,6 +12,8 @@ section.sobre {
   background-color: #FFFF00;
   overflow-x: scroll;
   position: relative;
+  -webkit-box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+          box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
 }
 
 section.sobre div.container {
@@ -228,17 +230,20 @@ section.sobre div.container div.page div.bottom p.actionSentence_no_bg {
 
 section.sobre div.container div.page div.bottom p.actionSentence_no_bg button.projectsButton {
   background: #FFFF00;
-  padding: 8px;
+  padding: 4px;
   -webkit-animation: pulse 4s linear infinite;
           animation: pulse 4s linear infinite;
+  border-radius: 8px;
+  -webkit-box-shadow: 0px 2px 4px black;
+          box-shadow: 0px 2px 4px black;
 }
 
 section.sobre div.container div.page div.bottom p.actionSentence_no_bg button.projectsButton img.logoButton {
   width: 64px;
   height: 64px;
   background: transparent;
-  -webkit-animation: rotate 10s linear infinite;
-          animation: rotate 10s linear infinite;
+  -webkit-animation: rotate 32s linear infinite;
+          animation: rotate 32s linear infinite;
 }
 
 @-webkit-keyframes rotate {

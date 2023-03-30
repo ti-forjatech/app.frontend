@@ -5,6 +5,7 @@ section.sobre{
     background-color: $base_color;
     overflow-x: scroll;
     position: relative;
+    box-shadow: 0 2px 8px rgba(0,0,0,.5);
     
     div.container{
         width: calc(5 * 100vw);
@@ -176,14 +177,17 @@ section.sobre{
                     justify-content: center;
 
                     button.projectsButton{
-                        background:$base_color;
-                        padding: 8px;
+                        background: $base_color;
+                        padding: 4px;
                         animation: pulse 4s linear infinite;
+                        border-radius: 8px;
+                        box-shadow: 0px 2px 4px black;
+
                         img.logoButton{
                             width:64px;
                             height:64px;
                             background:transparent;
-                            animation: rotate 10s linear infinite;
+                            animation: rotate 32s linear infinite;
                         }
                     }
                 }

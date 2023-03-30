@@ -22,21 +22,26 @@ section.skills{
         p.resume{
             font-weight: light;
             font-size: 1rem;
+            letter-spacing: 0.1rem;
             margin: 16px 0;
         }
 
         h2.subtitle{
             font-weight: regular;
-            font-size: 1.4rem;
+            font-size: 1.1rem;
             text-decoration: underline;
+            text-decoration-color: $base_color;
+            text-decoration-thickness: 4px;
         }
 
         ul{
             list-style:none;
             margin: 8px 0;
             li{
+                line-height: 1rem;
                 font-weight: light;
-                font-size: 1rem;
+                font-size: .9rem;
+                letter-spacing: 0.1rem;
             }
         }
     }

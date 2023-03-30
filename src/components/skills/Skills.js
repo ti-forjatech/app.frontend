@@ -41,7 +41,7 @@ export default function Skills(){
                 <h2 className="subtitle">Bibliotecas</h2>
                 <ul>
                     <li>Libs do Python e do Node.</li>
-                    <li>Framer-motion, Three.js e React-three-fiber.</li>
+                    <li>Framer-motion, Three.js e React-three-fiber e muito mais...</li>
                 </ul>
             </div>
         </section>
