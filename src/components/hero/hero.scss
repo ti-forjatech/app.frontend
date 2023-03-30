@@ -2,7 +2,6 @@
 @import '../common/mixins';
 div.hero{
     @include reset_proportions;
-    animation: colorful 5s linear infinite;
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
@@ -44,7 +43,6 @@ div.hero{
     }
 
     div.heroContent{
-        content: "";
         width: 100vw;
         height: 100vh;
         position: absolute;
@@ -52,6 +50,31 @@ div.hero{
         left: 0px;
         bottom: 0px;
         z-index: 1;
+        overflow-x: hidden;
+
+        div.heroFilter{
+            content: "";
+            width:inherit;
+            height:inherit;
+            background-color: rgba(0,0,0,.2);
+            backdrop-filter: blur(2px);
+            position: absolute;
+            top:0;
+            left:0;
+        }
+        
+        div.heroImage{
+            width:1415px;
+            height:100%;
+            background: url('./hero_bg_forjatech.png');
+            animation: autoHorizontalScroll 64s linear infinite
+        }
+
+        @keyframes autoHorizontalScroll {
+            0%{background-position: 0;}
+            100%{background-position: 1415px;}
+        }
+        background-position: 100px;
     }
 
     @keyframes pulse {
@@ -59,23 +82,5 @@ div.hero{
         90%{transform: scale(1.01); background-color:transparent; color:$base_color; border: solid 1px $base_color;}
         95%{transform: scale(1.05); background-color:transparent; color:$base_color; border: solid 1px $base_color;}
         100%{transform: scale(1);}
-    }
-
-    @keyframes colorful {
-        0%{
-            background-color: #000;
-        }
-        20%{
-            background-color: #333;
-        }
-        50%{
-            background-color: #666;
-        }
-        80%{
-            background-color: #333;
-        }
-        100%{
-            background-color: #000;
-        }
     }
 }

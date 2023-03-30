@@ -9,8 +9,6 @@ button.btn {
 div.hero {
   height: 100vh;
   width: 100vw;
-  -webkit-animation: colorful 5s linear infinite;
-          animation: colorful 5s linear infinite;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -64,7 +62,6 @@ div.hero .btnOrganizer button.cta {
 }
 
 div.hero div.heroContent {
-  content: "";
   width: 100vw;
   height: 100vh;
   position: absolute;
@@ -72,6 +69,46 @@ div.hero div.heroContent {
   left: 0px;
   bottom: 0px;
   z-index: 1;
+  overflow-x: hidden;
+  background-position: 100px;
+}
+
+div.hero div.heroContent div.heroFilter {
+  content: "";
+  width: inherit;
+  height: inherit;
+  background-color: rgba(0, 0, 0, 0.2);
+  -webkit-backdrop-filter: blur(2px);
+          backdrop-filter: blur(2px);
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+div.hero div.heroContent div.heroImage {
+  width: 1415px;
+  height: 100%;
+  background: url("./hero_bg_forjatech.png");
+  -webkit-animation: autoHorizontalScroll 64s linear infinite;
+          animation: autoHorizontalScroll 64s linear infinite;
+}
+
+@-webkit-keyframes autoHorizontalScroll {
+  0% {
+    background-position: 0;
+  }
+  100% {
+    background-position: 1415px;
+  }
+}
+
+@keyframes autoHorizontalScroll {
+  0% {
+    background-position: 0;
+  }
+  100% {
+    background-position: 1415px;
+  }
 }
 
 @-webkit-keyframes pulse {
@@ -121,42 +158,6 @@ div.hero div.heroContent {
   100% {
     -webkit-transform: scale(1);
             transform: scale(1);
-  }
-}
-
-@-webkit-keyframes colorful {
-  0% {
-    background-color: #000;
-  }
-  20% {
-    background-color: #333;
-  }
-  50% {
-    background-color: #666;
-  }
-  80% {
-    background-color: #333;
-  }
-  100% {
-    background-color: #000;
-  }
-}
-
-@keyframes colorful {
-  0% {
-    background-color: #000;
-  }
-  20% {
-    background-color: #333;
-  }
-  50% {
-    background-color: #666;
-  }
-  80% {
-    background-color: #333;
-  }
-  100% {
-    background-color: #000;
   }
 }
 /*# sourceMappingURL=hero.css.map */

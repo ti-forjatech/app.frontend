@@ -1,4 +1,5 @@
 import React from 'react';
+import bg from './hero_bg_forjatech.png'
 import './hero.css'
 
 export default function Hero() {
@@ -14,6 +15,10 @@ export default function Hero() {
 
             <div className="heroContent">
             {/** Importar e Inserir aqui o conteudo do hero */}
+                <div className="heroFilter"></div>
+                <div className="heroImage">
+
+                </div>
             </div>
         </div>
     );
