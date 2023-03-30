@@ -7,7 +7,11 @@ section.skills{
     font-family: 'Josefin Sans';
 
     div.container{
+        height: 100%;
         padding:16px;
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
 
         h1.sectionTitle{
             font-size:2rem;
@@ -17,7 +21,7 @@ section.skills{
         p.resume{
             font-weight: light;
             font-size: 1rem;
-            margin: 16px 0;
+            margin: auto 0;
         }
 
         h2.subtitle{
