@@ -1,6 +1,7 @@
 import React from 'react';
 import vector_forjatech from './vector_forjatech.svg'
 import setaDir from './seta_dir.svg'
+import doubleArrow from './double_right_arrow_forjatech.png'
 import './sobre.css';
 
 export default function Sobre(props) {
@@ -83,6 +84,8 @@ export default function Sobre(props) {
         } else if(footerText === 'projetos_'){
             return (
             <p className="actionSentence_no_bg" key={pageNumber}>
+                <p>Projetos</p>
+                <img className="doubleArrow" src={doubleArrow} alt="Seta dupla para a direita."/>
                 <button className="projectsButton" onClick={() =>{setPage('projetos')}}>
                     <img className="logoButton" src={vector_forjatech} alt="Logo" />
                 </button>

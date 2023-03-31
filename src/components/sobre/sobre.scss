@@ -186,6 +186,19 @@ section.sobre{
                     padding: 16px;
                     justify-content: center;
 
+                    p{
+                        margin: 32px 16px;
+                        color: $base_color;
+                        font-weight: bolde;
+                        font-size: 1.2rem;
+                    }
+
+                    img.doubleArrow{
+                        width: 12.25px;
+                        height: 14px;
+                        margin: 32px 16px;
+                    }
+
                     button.projectsButton{
                         background: $base_color;
                         padding: 4px;
