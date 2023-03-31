@@ -2,6 +2,10 @@
 $base_color: #FFFF00;
 $background_color: #444;
 
+*{
+    user-select: none;
+}
+
 //Common elements
 button.btn{
     padding: 8px;

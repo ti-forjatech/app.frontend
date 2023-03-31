@@ -1,0 +1,61 @@
+@import '../common/common';
+@import '../common/mixins';
+
+section.projetos_{
+    @include reset_proportions;
+    @include reset_font_size;
+
+    display: flex;
+    flex-direction: column;
+    
+    div.topContainer{
+        padding: 16px;
+        flex-basis: 20%;
+        flex-grow: 1;
+        position: relative;
+
+        button.backButton{
+            background-color: black;
+            color: $base_color;
+            padding: 2px;
+            position: absolute;
+            top: 32px;
+            right: 16px;
+            font-size: 1.1rem;
+        }
+
+        h1.sectionTitle{
+            margin:16px 0;
+            font-size: 0.8rem;
+        }
+
+        div.dashedBoard{
+            margin: 32px 0;
+            padding: 16px;
+            border: dashed 2px black;
+        }
+    }
+    
+    div.botContainer{
+        padding: 16px;
+        flex-basis: 80%;
+        flex-grow: 1;
+        background-color: $base_color;
+        display: flex;
+        flex-direction:column;
+        justify-content: center;
+
+        button.projectButton{
+            height: 80px;
+            margin: 16px 0;
+            border: solid 1px black;
+            background-color: transparent;
+            cursor: pointer;
+
+            &:hover{
+                background-color: black;
+                color: $base_color;
+            }
+        }
+    }
+}

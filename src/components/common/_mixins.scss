@@ -8,3 +8,7 @@
     @include reset_height;
     @include reset_width;
 }
+
+@mixin reset_font_size(){
+    font-size:1em;
+}

@@ -3,7 +3,8 @@ import vector_forjatech from './vector_forjatech.svg'
 import setaDir from './seta_dir.svg'
 import './sobre.css';
 
-export default function Sobre() {
+export default function Sobre(props) {
+    const setPage = props.setPage
     const pages = [
         {
             pageNumber: 1,
@@ -26,7 +27,7 @@ export default function Sobre() {
         {
             pageNumber: 4,
             pageTitle: '',
-            content: `Com o avanço tecnológico que presenciamos nos últimos anos, é importante ressaltar a importância da área de TI para os diversos empreendimentos. \n Trazendo uma visão técnica para o negócio dos nossos clientes, nossa proposta é guiar os setores de comércio e serviços locais por estratégias eficientes de gestão de dados. \n Estas estratégias, permitem?! --------👉🏽`,
+            content: `Com o avanço tecnológico que presenciamos nos últimos anos, é importante ressaltar a importância da área de TI para os diversos empreendimentos. \n Trazendo uma visão técnica para o negócio dos nossos clientes, nossa proposta é guiar os setores de comércio e serviços locais por estratégias eficientes de gestão de dados. \n Estas estratégias, permitem 👉🏽`,
             footer: '“Desenvolver um sistema ou website, é na sua maior parte técnica. Mas, é também arte em seus momentos.”'
         },
         {
@@ -82,7 +83,7 @@ export default function Sobre() {
         } else if(footerText === 'projetos_'){
             return (
             <p className="actionSentence_no_bg" key={pageNumber}>
-                <button className="projectsButton">
+                <button className="projectsButton" onClick={() =>{setPage('projetos')}}>
                     <img className="logoButton" src={vector_forjatech} alt="Logo" />
                 </button>
             </p>
