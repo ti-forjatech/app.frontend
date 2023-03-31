@@ -3,8 +3,7 @@ import Hero from '../hero/Hero';
 import React from 'react';
 import './inicio.css'
 
-export default function Inicio(props) {
-    const setPage = props.setPage
+export default function Inicio() {
     return (
         <section className="inicio">
             <Logo />
