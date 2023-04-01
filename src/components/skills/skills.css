@@ -43,14 +43,13 @@ section.skills div.container h1.sectionTitle {
 
 section.skills div.container p.resume {
   font-weight: light;
-  font-size: 1rem;
-  letter-spacing: 0.1rem;
+  font-size: .9rem;
   margin: 16px 0;
 }
 
 section.skills div.container h2.subtitle {
   font-weight: regular;
-  font-size: 1.1rem;
+  font-size: .9rem;
   text-decoration: underline;
   -webkit-text-decoration-color: #FFFF00;
           text-decoration-color: #FFFF00;
@@ -66,6 +65,5 @@ section.skills div.container ul li {
   line-height: 1rem;
   font-weight: light;
   font-size: .9rem;
-  letter-spacing: 0.1rem;
 }
 /*# sourceMappingURL=skills.css.map */

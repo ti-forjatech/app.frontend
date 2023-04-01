@@ -1,0 +1,92 @@
+@import '../common/common';
+@import '../common/mixins';
+
+section.contato{
+    @include reset_font_size;
+    
+    div.container{
+        div.topBlackDetail{
+            content: "";
+            height: 32px;
+            background-color:black;
+            margin: 0 16px;
+        }
+        
+        h1.sectionTitle{
+            width: 100%;
+            margin: 55px 0;
+            text-align: center;
+        }
+        
+        div.alertBoard{
+            background-color: $base_color;
+            padding: 32px 16px;
+
+            p.boardMessage{
+                font-size:.9rem;
+            }
+        }
+
+        div.contactFormWrapper{
+            padding: 16px;
+            form{
+                div.inputOrganizer{
+                    display: flex;
+                    flex-direction:column;
+                    align-items:center;
+                    margin: 16px 0;
+                    width: 100%;
+
+                    label.labelForContactInput{
+                        width: inherit;
+                        font-weight: bold;
+                        letter-spacing: 0.08rem;
+                    }
+
+                    input, textarea{
+                        padding: 16px 0;
+                        width: inherit;
+                        letter-spacing: 0.08rem;
+                        border-bottom: solid 2px black;
+                        outline: none;
+                    }
+
+                    input.contactInput{
+                        height: 32px;
+                    }
+                    
+                    textarea.contactInput{
+                        height: 32px;
+                        resize: none;
+                    }
+                }
+
+                input.enviarBtn{
+                    width:100%;
+                    height: 32px;
+                    margin: 32px 0;
+                    background-color: black;
+                    color: $base_color;
+                    // border: solid 1px rgba(0,0,0,0.5);
+                }
+            }
+        }
+
+        div.social{
+            height: auto;
+            display: flex;
+            justify-content: flex-start;
+            height: auto;
+            margin: 16px 0;
+            a{
+                margin: 0 16px;
+                svg.icon{
+                    width: 45px;
+                    height: 45px;
+                    fill: black;
+                }
+            }
+
+        }
+    }
+}

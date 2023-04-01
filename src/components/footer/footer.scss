@@ -4,28 +4,10 @@
 section.footer{
     font-size: 1em;
     font-family: 'Josefin Sans';
-    height:200px;
     background-color: black;
     color: white;
     position: relative;
     overflow: hidden;
-
-    button.btnTopo{
-        cursor: pointer;
-        position: absolute;
-        top: 16px;
-        right: 16px;
-        background-color: #FFFF00;
-        width: 50px;
-        height: 50px;
-        border-radius: 50%;
-        transform: translateX(100px);
-        transition: transform 2s cubic-bezier(0.01, 1.01, 0.54, 1.03);
-    }
-
-    button.btnTopoShow{
-        transform: translateX(0px);
-    }
     
     div.container{
         height: inherit;
@@ -33,31 +15,22 @@ section.footer{
         flex-direction: column;
         align-items: center;
         justify-content: space-between;
-        h2{
-            color: $base_color;
-            margin: 32px 0;
-        }
-        div.organizer{
-            display: flex;
-            justify-content: center;
-            a{
-                svg.icon{
-                    width: 50px;
-                    height: 50px;
-                    fill: white;
-                }
-            }
-
-        }
     }
 
     p.credit{
-        margin: 16px 0;
+        margin-top: 32px;
         font-weight: 300;
+
         a{  
             text-decoration: none;
             font-weight: 500;
             color: $base_color;
         }
+    }
+
+    p.subfooter{
+        width: 100%;
+        text-align: center;
+        margin-bottom: 32px;
     }
 }

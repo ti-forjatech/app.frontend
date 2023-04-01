@@ -21,14 +21,14 @@ section.skills{
 
         p.resume{
             font-weight: light;
-            font-size: 1rem;
-            letter-spacing: 0.1rem;
+            font-size: .9rem;
+            // letter-spacing: 0.1rem;
             margin: 16px 0;
         }
 
         h2.subtitle{
             font-weight: regular;
-            font-size: 1.1rem;
+            font-size: .9rem;
             text-decoration: underline;
             text-decoration-color: $base_color;
             text-decoration-thickness: 4px;
@@ -41,7 +41,7 @@ section.skills{
                 line-height: 1rem;
                 font-weight: light;
                 font-size: .9rem;
-                letter-spacing: 0.1rem;
+                // letter-spacing: 0.1rem;
             }
         }
     }

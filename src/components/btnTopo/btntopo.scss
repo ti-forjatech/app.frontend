@@ -1,0 +1,20 @@
+@import '../common/common';
+@import '../common/mixins';
+
+button.btnTopo{
+    cursor: pointer;
+    position: absolute;
+    bottom: 112px;
+    right: 16px;
+    background-color: #FFFF00;
+    width: 50px;
+    box-shadow: 0 2px 4px rgba(0,0,0,.5);
+    height: 50px;
+    transform: translateX(100px);
+    border-radius: 50%;
+    transition: transform 2s cubic-bezier(0.01, 1.01, 0.54, 1.03);
+}
+
+button.btnTopoShow{
+    transform: translateX(0px);
+}

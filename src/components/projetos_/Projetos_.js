@@ -3,6 +3,10 @@ import './projetos_.css';
 
 export default function Projetos(props) {
     const setPage = props.setPage;
+    const msg1 = "Ainda não tenho projetos comerciais. Cada trabalho terminado, vai vir para cá!"
+    const msg2 = "Esta área está em construção."
+    const msg3 = "Estarei em breve, adicionando alguns estudos que estou fazendo."
+
     return (
         <section className="projetos_">
             <div className="topContainer">
@@ -13,9 +17,9 @@ export default function Projetos(props) {
                 </div>
             </div>
             <div className="botContainer">
-                <button className="projectButton">Projetos comerciais</button>
-                <button className="projectButton">Projetos pessoais</button>
-                <button className="projectButton">Laboratório</button>
+                <button className="projectButton" onClick={() =>{alert(msg1)}}>Projetos comerciais</button>
+                <button className="projectButton" onClick={()=>{alert(msg2)}}>Projetos pessoais</button>
+                <button className="projectButton" onClick={()=>{alert(msg3)}}>Laboratório</button>
             </div>
         </section>
     )
