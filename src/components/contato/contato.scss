@@ -24,6 +24,7 @@ section.contato{
 
             p.boardMessage{
                 font-size:.9rem;
+                letter-spacing: 0.08rem;
             }
         }
 
@@ -56,7 +57,7 @@ section.contato{
                     }
                     
                     textarea.contactInput{
-                        height: 32px;
+                        // height: 32px;
                         resize: none;
                     }
                 }
