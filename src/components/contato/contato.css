@@ -61,8 +61,8 @@ section.contato div.container div.contactFormWrapper form div.inputOrganizer {
 
 section.contato div.container div.contactFormWrapper form div.inputOrganizer label.labelForContactInput {
   width: inherit;
-  font-weight: 400;
-  letter-spacing: 0.04rem;
+  font-weight: bold;
+  letter-spacing: 0.08rem;
 }
 
 section.contato div.container div.contactFormWrapper form div.inputOrganizer input, section.contato div.container div.contactFormWrapper form div.inputOrganizer textarea {
@@ -84,10 +84,9 @@ section.contato div.container div.contactFormWrapper form div.inputOrganizer tex
 section.contato div.container div.contactFormWrapper form input.enviarBtn {
   width: 100%;
   height: 32px;
-  margin: 16px 0;
+  margin: 32px 0;
   background-color: black;
   color: #FFFF00;
-  letter-spacing: 0.08rem;
 }
 
 section.contato div.container div.social {
@@ -99,7 +98,7 @@ section.contato div.container div.social {
       -ms-flex-pack: start;
           justify-content: flex-start;
   height: auto;
-  padding: 16px 0;
+  margin: 16px 0;
 }
 
 section.contato div.container div.social a {

@@ -1,45 +1,7 @@
-import React, {useState} from 'react';
+import React from 'react';
 import './contato.css';
 
 export default function Contato(){
-    const [nome, setNome] = useState('')
-    const [email, setEmail] = useState('')
-    const [telefone, setTelefone] = useState('')
-    const [mensagem, setMensagem] = useState('')
-    
-    const handleSubmit = (e) => {
-        e.preventDefault();
-
-        if(nome !== '' && email !== '' && telefone !== '' && mensagem !== ''){
-            const data = {
-                nome: nome,
-                email: email,
-                telefone: telefone,
-                mensagem:mensagem
-            }
-
-            sendRequest(data)
-        }
-    };
-
-    const sendRequest = async (data) => {
-        const url = urlConstructor()
-        await fetch(url, {headers:{'Content-Type':'application/json'}, method:'POST', body:JSON.stringify(data)})
-                .then( request => {request.json()
-                .then(response => {
-                    console.log(response)
-                })})
-                .catch( error => console.log(error))
-    }
-
-    const urlConstructor = () => {
-        const protocol = window.location.protocol
-        const hostname = window.location.hostname
-        const port = 5000
-        const path = '/contato/enviar'
-        return protocol + '//' + hostname + ':' + port + path
-    }
-
     return (
         <section className="contato">
             <div className="container">
@@ -51,22 +13,22 @@ export default function Contato(){
                     </p>
                 </div>
                 <div className="contactFormWrapper">
-                    <form onSubmit={handleSubmit}>
+                    <form action='mailto:thyezoliveira.homeoffice@gmail.com'>
                         <div className="inputOrganizer">
-                            <label className="labelForContactInput" htmlFor="contactNome">Nome</label>
-                            <input onInput={(e)=>{setNome(e.target.value)}} type="text" className="contactInput" name="contactNome"/>
+                            <label className="labelForContactInput" for="contactNome">Nome</label>
+                            <input type="text" className="contactInput" name="contactNome"/>
                         </div>
                         <div className="inputOrganizer">
-                            <label className="labelForContactInput" htmlFor="contactEmail">Email</label>
-                            <input onInput={(e)=>{setEmail(e.target.value)}} type="text" className="contactInput" name="contactEmail"/>
+                            <label className="labelForContactInput" for="contactEmail">Email</label>
+                            <input type="text" className="contactInput" name="contactEmail"/>
                         </div>
                         <div className="inputOrganizer">
-                            <label className="labelForContactInput" htmlFor="contactTelefone">Telefone</label>
-                            <input onInput={(e)=>{setTelefone(e.target.value)}} type="text" className="contactInput" name="contactTelefone"/>
+                            <label className="labelForContactInput" for="contactTelefone">Telefone</label>
+                            <input type="text" className="contactInput" name="contactTelefone"/>
                         </div>
                         <div className="inputOrganizer">
-                            <label className="labelForContactInput" htmlFor="contactMensagem">Mensagem</label>
-                            <textarea onInput={(e)=>{setMensagem(e.target.value)}} type="text" className="contactInput" name="contactMensagem"/>
+                            <label className="labelForContactInput" for="contactMensagem">Mensagem</label>
+                            <textarea type="text" className="contactInput" name="contactMensagem"/>
                         </div>
                         <input type="submit" className="enviarBtn"value="Enviar" />
                     </form>
