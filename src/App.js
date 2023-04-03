@@ -17,7 +17,7 @@ function App() {
         <Inicio />
         <Sobre setPage={setPage}/>
         <Skills />
-        <Contato />
+        {/* <Contato /> */}
         <Footer />
         <BtnTopo />
       </>
