@@ -24,6 +24,7 @@ export default function Contato(){
             data.email_contact = email
             dataValidate.email = true
         }
+
         if(message !== null && message !== undefined && message !== ""){
             data.email_msg = message
             dataValidate.message = true
@@ -32,7 +33,7 @@ export default function Contato(){
         if(dataValidate.email && dataValidate.message){
             sendEmail(data.email_contact, data.email_msg)
         }
-        
+
     }, [email, message, mailSent]);
 
     async function sendEmail(email, message){
@@ -46,7 +47,7 @@ export default function Contato(){
             body: JSON.stringify({"email_contact":email, "email_msg":message})
         }
 
-        const response = await fetch('http://15.228.226.51/contato/enviar', options)
+        const response = await fetch('https://15.228.226.51/contato/enviar', options)
         const jsonData = await response.json()
         if(jsonData.success === "ok") {
             setMailSent(true)
