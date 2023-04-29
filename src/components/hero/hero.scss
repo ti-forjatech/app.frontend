@@ -19,6 +19,7 @@ div.hero{
         margin: 16px auto;
         overflow-wrap: anywhere;
         z-index: 2;
+        filter: drop-shadow(0 2px 2px black);
     }
     
     p.subfrase{
@@ -29,6 +30,7 @@ div.hero{
         text-align: left;
         margin: 16px 0;
         z-index: 2;
+        filter: drop-shadow(0 2px 2px black);
     }
 
     .btnOrganizer{
@@ -65,8 +67,9 @@ div.hero{
         
         div.heroImage{
             width:1415px;
-            height:100%;
-            background: url('./hero_bg_forjatech.png');
+            height:100vh;
+            // background: url('./hero_bg_forjatech.png');
+            background-size: contain;
             animation: autoHorizontalScroll 64s linear infinite
         }
 
