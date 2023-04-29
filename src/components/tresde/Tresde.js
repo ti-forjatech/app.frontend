@@ -8,10 +8,10 @@ export default function Tresde() {
     return (
         <section className="tresde_hero">
             <Canvas>
-                <PerspectiveCamera manual aspect={1} onUpdate={(c) => c.updateProjectionMatrix()} fov={90} >
-                        <ambientLight castShadow intensity={1}/>
-                        <pointLight castShadow position={[10, 10, -10]} intensity={2} />
-                        <Honeycomb id={1} position={[0,0,0]} animDuration={500} scale={3.5}/>
+                <PerspectiveCamera far={500} near={0.5} manual aspect={1} onUpdate={(c) => c.updateProjectionMatrix()} fov={90} >
+                        <ambientLight />
+                        <pointLight position={[0, -.5, -.5]} intensity={3} color={'#FFFF00'} decay={1} shadow={PerspectiveCamera}/>
+                        <Honeycomb id={1} position={[0,0,0]} animDuration={50} scale={3.5}/>
                 </PerspectiveCamera>
             </Canvas>
         </section>
