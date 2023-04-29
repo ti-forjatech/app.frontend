@@ -63,13 +63,14 @@ section.contato div.container div.contactFormWrapper form div.inputOrganizer lab
   width: inherit;
   font-weight: bold;
   letter-spacing: 0.08rem;
+  margin-bottom: 16px;
 }
 
 section.contato div.container div.contactFormWrapper form div.inputOrganizer input, section.contato div.container div.contactFormWrapper form div.inputOrganizer textarea {
-  padding: 16px 0;
+  padding: 8px;
   width: inherit;
   letter-spacing: 0.08rem;
-  border-bottom: solid 2px black;
+  border: solid 2px black;
   outline: none;
 }
 
@@ -78,15 +79,40 @@ section.contato div.container div.contactFormWrapper form div.inputOrganizer inp
 }
 
 section.contato div.container div.contactFormWrapper form div.inputOrganizer textarea.contactInput {
-  resize: none;
+  height: 100px;
+  resize: vertical;
 }
 
 section.contato div.container div.contactFormWrapper form input.enviarBtn {
   width: 100%;
-  height: 32px;
+  height: 64px;
   margin: 32px 0;
   background-color: black;
   color: #FFFF00;
+}
+
+section.contato div.container div.contactFormWrapper p.feedbackMessage {
+  background-color: #FFFF00;
+  border: solid 2px black;
+  height: 50px;
+  font-size: 12px;
+  letter-spacing: 0.08rem;
+  color: black;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+section.contato div.container p.social_label {
+  width: 100%;
+  text-align: center;
 }
 
 section.contato div.container div.social {
@@ -94,9 +120,12 @@ section.contato div.container div.social {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   height: auto;
   margin: 16px 0;
 }

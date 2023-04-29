@@ -1,7 +1,7 @@
 import {useState} from 'react';
 import Inicio from './components/inicio/Inicio';
 import Sobre from './components/sobre/Sobre';
-// import Contato from './components/contato/Contato';
+import Contato from './components/contato/Contato';
 import Skills from './components/skills/Skills';
 import Footer from './components/footer/Footer';
 import BtnTopo from './components/btnTopo/BtnTopo';
@@ -17,7 +17,7 @@ function App() {
         <Inicio />
         <Sobre setPage={setPage}/>
         <Skills />
-        {/* <Contato /> */}
+        <Contato />
         <Footer />
         <BtnTopo />
       </>

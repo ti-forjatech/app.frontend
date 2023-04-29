@@ -1,7 +1,62 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import './contato.css';
 
 export default function Contato(){
+
+    const [email, setEmail] = useState(null)
+    const [message, setMessage] = useState(null)
+    const [mailSent, setMailSent] = useState(false)
+    const [feedbackMessage] = useState("Seu contato foi enviado com sucesso!")
+
+    const handleSendForm = (e) => {
+        e.preventDefault();
+        const contactValue = e.target.form.querySelector(".contactInputContact").value
+        const messageValue = e.target.form.querySelector(".contactInputMessage").value
+        setEmail(contactValue)
+        setMessage(messageValue)
+    }
+
+    useEffect(() => {
+        let dataValidate = {}
+        let data = {}
+
+        if(email !== null && email !== undefined && email !== ""){
+            data.email_contact = email
+            dataValidate.email = true
+        }
+        if(message !== null && message !== undefined && message !== ""){
+            data.email_msg = message
+            dataValidate.message = true
+        }
+
+        if(dataValidate.email && dataValidate.message){
+            sendEmail(data.email_contact, data.email_msg)
+        }
+        
+    }, [email, message, mailSent]);
+
+    async function sendEmail(email, message){
+        const options = {
+            method: "POST",
+            mode: "cors",
+            cache: "no-cache",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({"email_contact":email, "email_msg":message})
+        }
+
+        const response = await fetch('http://15.228.226.51/contato/enviar', options)
+        const jsonData = await response.json()
+        if(jsonData.success === "ok") {
+            setMailSent(true)
+        }
+    }
+
+    const FeedbackComponent = () => {
+        return <p className="feedbackMessage">{feedbackMessage}</p>
+    }
+
     return (
         <section className="contato">
             <div className="container">
@@ -13,26 +68,28 @@ export default function Contato(){
                     </p>
                 </div>
                 <div className="contactFormWrapper">
-                    <form action='mailto:thyezoliveira.homeoffice@gmail.com'>
-                        <div className="inputOrganizer">
+                    <form action='http://15.228.226.51/contato/enviar' method='POST'>
+                        {/* <div className="inputOrganizer">
                             <label className="labelForContactInput" for="contactNome">Nome</label>
                             <input type="text" className="contactInput" name="contactNome"/>
-                        </div>
+                        </div> */}
                         <div className="inputOrganizer">
-                            <label className="labelForContactInput" for="contactEmail">Email</label>
-                            <input type="text" className="contactInput" name="contactEmail"/>
+                            <label className="labelForContactInput" htmlFor="contactEmail">Email</label>
+                            <input type="text" className="contactInput contactInputContact" name="contactEmail"/>
                         </div>
-                        <div className="inputOrganizer">
+                        {/* <div className="inputOrganizer">
                             <label className="labelForContactInput" for="contactTelefone">Telefone</label>
                             <input type="text" className="contactInput" name="contactTelefone"/>
-                        </div>
+                        </div> */}
                         <div className="inputOrganizer">
-                            <label className="labelForContactInput" for="contactMensagem">Mensagem</label>
-                            <textarea type="text" className="contactInput" name="contactMensagem"/>
+                            <label className="labelForContactInput" htmlFor="contactMensagem">Mensagem</label>
+                            <textarea type="text" className="contactInput contactInputMessage" name="contactMensagem"/>
                         </div>
-                        <input type="submit" className="enviarBtn"value="Enviar" />
+                        <input type="submit" className="enviarBtn"value="Enviar" onClick={(e) => {handleSendForm(e)}} />
                     </form>
+                    {mailSent ? <FeedbackComponent/> : "" }
                 </div>
+                <p className="social_label">links para contato</p>
                 <div className="social">
                     <a id="linkedin" target="blanc" href="https://www.linkedin.com/in/engsofthyezoliveira/">
                         <svg className="icon" width="64" height="64" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">

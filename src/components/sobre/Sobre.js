@@ -83,13 +83,13 @@ export default function Sobre(props) {
             )
         } else if(footerText === 'projetos_'){
             return (
-            <p className="actionSentence_no_bg" key={pageNumber}>
+            <div className="actionSentence_no_bg" key={pageNumber}>
                 <p>Projetos</p>
                 <img className="doubleArrow" src={doubleArrow} alt="Seta dupla para a direita."/>
                 <button className="projectsButton" onClick={() =>{setPage('projetos')}}>
                     <img className="logoButton" src={vector_forjatech} alt="Logo" />
                 </button>
-            </p>
+            </div>
             )
         }
     }
