@@ -27,9 +27,13 @@ button.btn {
   z-index: 2;
 }
 
-.logoContainer img {
-  width: 64px;
-  height: 64px;
+.logoContainer Canvas {
+  background-color: rgba(0, 0, 0, 0.8);
+  border-radius: 50%;
+  max-width: 64px;
+  max-height: 64px;
+  -webkit-backdrop-filter: blur(8px);
+          backdrop-filter: blur(8px);
 }
 
 .logoContainer .logoText {

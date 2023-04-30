@@ -355,8 +355,6 @@ section.sobre div.topBgBar {
   height: 100px;
   z-index: 1;
   background: yellow;
-  background: -webkit-gradient(linear, left top, right top, from(yellow), to(black));
-  background: linear-gradient(90deg, yellow 0%, black 100%);
 }
 
 section.sobre div.bottomBgBar {
@@ -367,8 +365,6 @@ section.sobre div.bottomBgBar {
   height: 132px;
   z-index: 1;
   background: yellow;
-  background: -webkit-gradient(linear, left top, right top, from(yellow), to(black));
-  background: linear-gradient(90deg, yellow 0%, black 100%);
 }
 
 section.sobre div.topBar {
@@ -379,7 +375,5 @@ section.sobre div.topBar {
   height: 2px;
   z-index: 2;
   background: yellow;
-  background: -webkit-gradient(linear, right top, left top, from(yellow), to(black));
-  background: linear-gradient(-90deg, yellow 0%, black 100%);
 }
 /*# sourceMappingURL=sobre.css.map */

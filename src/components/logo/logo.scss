@@ -8,9 +8,12 @@
     display: flex;
     z-index: 2; //A segunda camada é para acomodar os elementos que estao acima do background.
 
-    img{
-        width: 64px;
-        height: 64px;
+    Canvas{
+        background-color:rgba(0,0,0,.8);
+        border-radius: 50%;
+        max-width:64px;
+        max-height:64px;
+        backdrop-filter: blur(8px);
     }
 
     .logoText {

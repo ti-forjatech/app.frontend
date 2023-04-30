@@ -12,14 +12,15 @@ export default function Honeycomb(props) {
   const { nodes, materials } = useGLTF(model);
   const comb = useRef()
   return (
-    <group dispose={null}>
+    <motion.group dispose={null}>
       <motion.mesh name={`item${props.id}`}
       castShadow
       receiveShadow
-      animate={{ rotateY: 45, type: "spring", swiftness: 2000 }}
+      animate={{ rotateY: 360, type: "spring", swiftness: 2000 }}
       transition={{ ease: "linear", duration: props.animDuration, repeat: Infinity }}
       geometry={nodes.honeycomb.geometry}
       material={materials.pintura_basica}
+      initial={{rotateY:180}}
       rotation={[0, 0, -Math.PI / 2]}
       scale={props.scale}
       position={props.position}
@@ -32,7 +33,7 @@ export default function Honeycomb(props) {
       textAlign="center"
       anchorX={"center"}
       anchorY={"middle"}
-      position={[0,.68,0]}
+      position={[0,.68,5]}
       outlineOffsetX={'0%'}
       outlineOffsetY={'4%'}
       outlineBlur={2}
@@ -45,7 +46,7 @@ export default function Honeycomb(props) {
       receiveShadow
       castShadow
       >
-      Desenvolvimento de softwares personalizados
+      Desenvolvimento de software personalizado
       </Text>
 
       <Text ref={comb}
@@ -55,7 +56,7 @@ export default function Honeycomb(props) {
       textAlign="center"
       anchorX={"center"}
       anchorY={"middle"}
-      position={[0,-.5,0]}
+      position={[0,-.5,5]}
       outlineOffsetX={'0%'}
       outlineOffsetY={'4%'}
       outlineBlur={2}
@@ -68,9 +69,9 @@ export default function Honeycomb(props) {
       receiveShadow
       castShadow
       >
-      Soluções que podem potencializar o seu negócio e traze-lo para a era digital.
+      Soluções que podem potencializar o seu negócio.
       </Text>
-    </group>
+    </motion.group>
   );
 }
 
