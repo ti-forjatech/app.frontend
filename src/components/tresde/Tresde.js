@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Honeycomb from './Honeycomb';
 import { Canvas } from '@react-three/fiber';
-import { CameraControls, OrbitControls, PerspectiveCamera } from '@react-three/drei';
+import { PerspectiveCamera } from '@react-three/drei';
 import './style/tresde.css';
 
 export default function Tresde() {
