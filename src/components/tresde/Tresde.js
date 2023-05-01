@@ -9,7 +9,7 @@ export default function Tresde() {
     const [greetingsScale, setGreetingsScale] = useState(0)
 
     window.addEventListener('scroll', (e) => {
-        if(planeScale >= 0){
+        if(planeScale >= -5){
             setPlaneScale(e.srcElement.scrollingElement.scrollTop * -.02 + 6)
         } else {
             setPlaneScale(0)

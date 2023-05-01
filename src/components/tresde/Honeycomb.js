@@ -27,26 +27,26 @@ export default function Honeycomb(props) {
       scale={props.scale}
       position={props.position}
       >
-        <meshStandardMaterial metalness={.8} roughness={.05} color={'#FFFF00'} />
+        <meshStandardMaterial metalness={.8} roughness={.05} color={'#FFFF00'} fog={true}/>
       </motion.mesh>
 
       <Text ref={comb}
       scale={.02}
-      fontSize={18}
+      fontSize={20}
       maxWidth={150}
+      letterSpacing={.1}
+      lineHeight={1}
       textAlign="center"
       anchorX={"center"}
       anchorY={"middle"}
-      position={[0,.68,(props.planeScale - 1)]}
+      position={[0,.68,(props.planeScale - 1.5)]}
       outlineOffsetX={'0%'}
       outlineOffsetY={'4%'}
       outlineBlur={2}
       outlineOpacity={0.8}
-      letterSpacing={-0.1}
-      lineHeight={1}
       outlineColor="#000000"
-      font={font}
-      color={"#FFF"}
+      // font={font}
+      color={"#FF0"}
       receiveShadow
       castShadow
       >
@@ -56,7 +56,7 @@ export default function Honeycomb(props) {
       <Text ref={comb}
       scale={.02}
       fontSize={10}
-      maxWidth={150}
+      maxWidth={180}
       textAlign="center"
       anchorX={"center"}
       anchorY={"middle"}
@@ -83,7 +83,7 @@ export default function Honeycomb(props) {
       textAlign="center"
       anchorX={"center"}
       anchorY={"middle"}
-      position={[0,-1.3,props.greetingsScale - 1]}
+      position={[0,-1.3,props.greetingsScale - 1.5]}
       outlineOffsetX={'0%'}
       outlineOffsetY={'4%'}
       outlineBlur={2}
