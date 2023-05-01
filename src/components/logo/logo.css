@@ -13,12 +13,18 @@ button.btn {
   border-radius: 4px;
 }
 
-.logoContainer {
+div.logoWrapper {
+  border: solid 1px #FFFF00;
+}
+
+div.logoWrapper .logoContainer {
+  -webkit-box-shadow: 0 1px 4px black;
+          box-shadow: 0 1px 4px black;
+  height: 64px;
   position: absolute;
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
-  height: 65.31px;
   left: 28px;
   top: 27px;
   display: -webkit-box;
@@ -26,13 +32,13 @@ button.btn {
   display: flex;
   -webkit-backdrop-filter: blur(8px);
           backdrop-filter: blur(8px);
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: rgba(44, 44, 44, 0.6);
   border-radius: 4px;
   border-radius: 4px;
   z-index: 2;
 }
 
-.logoContainer Canvas {
+div.logoWrapper .logoContainer Canvas {
   max-width: 64px;
   max-height: 64px;
   background-color: black;
@@ -40,7 +46,7 @@ button.btn {
   border-bottom-left-radius: 4px;
 }
 
-.logoContainer .logoText {
+div.logoWrapper .logoContainer .logoText {
   font-family: 'Josefin Sans';
   padding: 8px;
   font-weight: 300;
@@ -58,7 +64,7 @@ button.btn {
           filter: drop-shadow(0 1px 2px black);
 }
 
-.logoContainer .logoTextBold {
+div.logoWrapper .logoContainer .logoTextBold {
   font-weight: 500;
 }
 /*# sourceMappingURL=logo.css.map */
