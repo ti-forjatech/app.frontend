@@ -27,14 +27,6 @@ section.sobre{
                 }
             }
 
-            &:nth-child(2), &:nth-child(3){
-                div.top{
-                    svg.seta_dir{
-                        fill:$base_color;
-                    }
-                }
-            }
-
             &:nth-child(4){
                 div.middle{
                     padding-right:0;
@@ -54,7 +46,6 @@ section.sobre{
 
                 div.top{
                     svg.seta_dir{
-                        fill: none;
                         stroke-width:1;
                         stroke:$base_color;
                     }
@@ -62,16 +53,15 @@ section.sobre{
             }
 
             &:last-child{
+                div.top{
+                    svg.seta_dir{
+                        display: none;
+                    }
+                }
+
                 div.middle{
                     background: black;
                     color: white;
-                }
-
-                div.top{
-                    svg.seta_dir{
-                        display:none;
-                        fill: none;
-                    }
                 }
             }
 
@@ -236,7 +226,7 @@ section.sobre{
         position:absolute;
         right: calc(64px - 16px);
         top: calc(64px - 16px);
-        background-color: $base_color;
+        background-color: black;
         z-index: 1;
     }
 
@@ -269,7 +259,7 @@ section.sobre{
         width: calc((5 * 100vw) - 64px);
         height: 2px;
         z-index: 2;
-        background: rgb(255,255,0);
+        background: black;
         // background: linear-gradient(-90deg, rgba(255,255,0,1) 0%, rgba(0,0,0,1) 100%);
     }
 

@@ -24,20 +24,25 @@ button.btn {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-backdrop-filter: blur(8px);
+          backdrop-filter: blur(8px);
+  background-color: rgba(0, 0, 0, 0.8);
+  border-radius: 4px;
+  border-radius: 4px;
   z-index: 2;
 }
 
 .logoContainer Canvas {
-  background-color: rgba(0, 0, 0, 0.8);
-  border-radius: 50%;
   max-width: 64px;
   max-height: 64px;
-  -webkit-backdrop-filter: blur(8px);
-          backdrop-filter: blur(8px);
+  background-color: black;
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
 }
 
 .logoContainer .logoText {
   font-family: 'Josefin Sans';
+  padding: 8px;
   font-weight: 300;
   font-size: 25px;
   line-height: 25px;

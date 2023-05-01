@@ -14,7 +14,7 @@ export default function Honeycomb(props) {
             material={materials.pintura_basica}
             rotation={[Math.PI / 2, 0, 0]}
             scale={1}
-            animate={{rotateY:360, type:"spring", swiftness:2000}}
+            animate={{rotateY:360, rotateX:360, rotateZ:360, type:"spring", swiftness:2000}}
             transition={{duration:1000, ease:"linear", repeat: Infinity}}
             />
         </motion.group>

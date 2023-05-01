@@ -10,6 +10,7 @@ import './App.css';
 
 function App() {
   const [page, setPage] = useState('landpage')
+  
   return (
     <div className="App">
       {page === 'landpage' ? 
