@@ -7,7 +7,7 @@ export default function Honeycomb(props) {
     const { nodes, materials } = useGLTF(model);
     return (
         <motion.group dispose={null}>
-            <motion.mesh name={`Honeycomb_logo`}
+            <motion.mesh name={`Honeycomb_logo1`}
             castShadow
             receiveShadow
             geometry={nodes.honeycomb.geometry}

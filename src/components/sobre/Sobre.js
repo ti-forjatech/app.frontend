@@ -1,8 +1,10 @@
 import React from 'react';
-import vector_forjatech from './vector_forjatech.svg'
+import Honeycomb from './Honeycomb';
+import Bulb from './Bulb';
 import setaDir from './seta_dir.svg'
-import doubleArrow from './double_right_arrow_forjatech.png'
 import './sobre.css';
+import { Canvas } from '@react-three/fiber';
+import { OrthographicCamera } from "@react-three/drei";
 
 export default function Sobre(props) {
     const setPage = props.setPage
@@ -85,9 +87,13 @@ export default function Sobre(props) {
             return (
             <div className="actionSentence_no_bg" key={pageNumber}>
                 <p>Projetos</p>
-                <img className="doubleArrow" src={doubleArrow} alt="Seta dupla para a direita."/>
+                <img className="doubleArrow" src={setaDir} alt="Seta dupla para a direita."/>
                 <button className="projectsButton" onClick={() =>{setPage('projetos')}}>
-                    <img className="logoButton" src={vector_forjatech} alt="Logo" />
+                    <Canvas style={{width:100, height:100}} className="projectButtonCanvas">
+                        <OrthographicCamera makeDefault position={[0,0,10]} zoom={30} far={-1} near={1000}>
+                        <Honeycomb/>
+                    </OrthographicCamera>
+                    </Canvas>
                 </button>
             </div>
             )
@@ -106,7 +112,13 @@ export default function Sobre(props) {
             }
 
             if(pageNumber === 2){
-                pageImage = imageMaker(vector_forjatech, "pageImage", "ForjaTech logo.")
+                // pageImage = imageMaker(vector_forjatech, "pageImage", "ForjaTech logo.")
+                pageImage = <Canvas style={{width:'100%', height:'100%', background:'transparent'}} className="sobreCanvas">
+                                <OrthographicCamera makeDefault position={[0,0,1]} zoom={30} far={-100} near={1000}>
+                                    <pointLight position={[0,1,1]} intensity={1}/>
+                                    <Bulb/>
+                                </OrthographicCamera>
+                            </Canvas>
             }
 
             if(pageNumber === 5){

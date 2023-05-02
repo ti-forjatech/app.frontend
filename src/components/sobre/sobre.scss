@@ -177,8 +177,8 @@ section.sobre{
                     justify-content: center;
 
                     p{
-                        margin: 32px 16px;
-                        color: $base_color;
+                        margin: 32px;
+                        color: black;
                         font-weight: bolde;
                         font-size: 1.2rem;
                     }
@@ -186,23 +186,21 @@ section.sobre{
                     img.doubleArrow{
                         width: 12.25px;
                         height: 14px;
-                        margin: 32px 16px;
+                        margin: 32px 32px 32px 0;
                     }
 
                     button.projectsButton{
                         background: $base_color;
-                        padding: 4px;
-                        animation: pulse 4s linear infinite;
                         border-radius: 8px;
                         box-shadow: 0px 2px 4px black;
                         cursor: pointer;
 
-                        img.logoButton{
-                            width:64px;
-                            height:64px;
-                            background:transparent;
-                            animation: rotate 32s linear infinite;
-                        }
+                        // img.logoButton{
+                        //     width:64px;
+                        //     height:64px;
+                        //     background:transparent;
+                        //     animation: rotate 32s linear infinite;
+                        // }
                     }
                 }
             }
