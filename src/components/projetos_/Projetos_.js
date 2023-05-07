@@ -3,9 +3,9 @@ import './projetos_.css';
 
 export default function Projetos(props) {
     const setPage = props.setPage;
-    const msg1 = "Ainda não tenho projetos comerciais. Cada trabalho terminado, vai vir para cá!"
-    const msg2 = "Esta área está em construção."
-    const msg3 = "Estarei em breve, adicionando alguns estudos que estou fazendo."
+    const msg1 = "Projetos comerciais estarão aqui!"
+    const msg2 = "Iniciativas da forjaTech preencherão esta área."
+    const msg3 = "Aqui estarão todas as experiencias em andamento e o que estamos aprendendo."
 
     return (
         <section className="projetos_">

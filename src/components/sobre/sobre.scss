@@ -175,32 +175,37 @@ section.sobre{
                     display:flex;
                     padding: 16px;
                     justify-content: center;
+                    align-items: center;
 
                     p{
-                        margin: 32px;
+                        margin: 16px;
                         color: black;
                         font-weight: bolde;
                         font-size: 1.2rem;
                     }
 
                     img.doubleArrow{
-                        width: 12.25px;
-                        height: 14px;
-                        margin: 32px 32px 32px 0;
+                        animation: rightIndicator 2s infinite linear alternate;
                     }
 
                     button.projectsButton{
                         background: $base_color;
                         border-radius: 8px;
-                        box-shadow: 0px 2px 4px black;
                         cursor: pointer;
+                    }
 
-                        // img.logoButton{
-                        //     width:64px;
-                        //     height:64px;
-                        //     background:transparent;
-                        //     animation: rotate 32s linear infinite;
-                        // }
+                    @keyframes rightIndicator {
+                        from{
+                            width: 12.25px;
+                            height: 14px;
+                            margin: 32px 32px 32px 0;
+                        }
+                        to{
+                            width: 12.25px;
+                            height: 14px;
+                            margin: 32px 0 32px 32px;
+
+                        }
                     }
                 }
             }

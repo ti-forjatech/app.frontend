@@ -17,11 +17,12 @@ section.projetos_{
         button.backButton{
             background-color: black;
             color: $base_color;
-            padding: 2px;
+            padding: 4px;
             position: absolute;
             top: 32px;
             right: 16px;
             font-size: 1.1rem;
+            cursor: pointer;
         }
 
         h1.sectionTitle{

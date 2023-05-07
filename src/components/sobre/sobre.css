@@ -245,27 +245,53 @@ section.sobre div.container div.page div.bottom div.actionSentence_no_bg {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 section.sobre div.container div.page div.bottom div.actionSentence_no_bg p {
-  margin: 32px;
+  margin: 16px;
   color: black;
   font-weight: bolde;
   font-size: 1.2rem;
 }
 
 section.sobre div.container div.page div.bottom div.actionSentence_no_bg img.doubleArrow {
-  width: 12.25px;
-  height: 14px;
-  margin: 32px 32px 32px 0;
+  -webkit-animation: rightIndicator 2s infinite linear alternate;
+          animation: rightIndicator 2s infinite linear alternate;
 }
 
 section.sobre div.container div.page div.bottom div.actionSentence_no_bg button.projectsButton {
   background: #FFFF00;
   border-radius: 8px;
-  -webkit-box-shadow: 0px 2px 4px black;
-          box-shadow: 0px 2px 4px black;
   cursor: pointer;
+}
+
+@-webkit-keyframes rightIndicator {
+  from {
+    width: 12.25px;
+    height: 14px;
+    margin: 32px 32px 32px 0;
+  }
+  to {
+    width: 12.25px;
+    height: 14px;
+    margin: 32px 0 32px 32px;
+  }
+}
+
+@keyframes rightIndicator {
+  from {
+    width: 12.25px;
+    height: 14px;
+    margin: 32px 32px 32px 0;
+  }
+  to {
+    width: 12.25px;
+    height: 14px;
+    margin: 32px 0 32px 32px;
+  }
 }
 
 @-webkit-keyframes rotate {

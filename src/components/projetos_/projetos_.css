@@ -39,11 +39,12 @@ section.projetos_ div.topContainer {
 section.projetos_ div.topContainer button.backButton {
   background-color: black;
   color: #FFFF00;
-  padding: 2px;
+  padding: 4px;
   position: absolute;
   top: 32px;
   right: 16px;
   font-size: 1.1rem;
+  cursor: pointer;
 }
 
 section.projetos_ div.topContainer h1.sectionTitle {

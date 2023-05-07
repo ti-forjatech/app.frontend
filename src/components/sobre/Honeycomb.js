@@ -14,8 +14,8 @@ export default function Honeycomb(props) {
             material={materials.pintura_basica}
             rotation={[Math.PI / 2, 0, 0]}
             scale={1}
-            animate={{rotateY:360, rotateX:360, rotateZ:360, type:"spring", swiftness:2000}}
-            transition={{duration:1000, ease:"linear", repeat: Infinity}}
+            animate={{rotateY:360, rotateX:360, rotateZ:360}}
+            transition={{duration:2000, repeat: Infinity, ease: 'linear'}}
             />
 
             <motion.mesh name={`Honeycomb_logo2`}
@@ -25,8 +25,8 @@ export default function Honeycomb(props) {
             material={materials.pintura_basica}
             rotation={[Math.PI / 2, 0, 0]}
             scale={.6}
-            animate={{rotateY:-360, rotateX:-360, rotateZ:-360, type:"spring", swiftness:2000}}
-            transition={{duration:1000, ease:"linear", repeat: Infinity}}
+            animate={{rotateY:-360, rotateX:-360, rotateZ:-360}}
+            transition={{duration:1000, repeat: Infinity, ease: 'linear'}}
             />
             <motion.mesh name={`Honeycomb_logo3`}
             castShadow
@@ -35,8 +35,8 @@ export default function Honeycomb(props) {
             material={materials.pintura_basica}
             rotation={[Math.PI / 2, 0, 0]}
             scale={.2}
-            animate={{rotateY:-360, rotateX:-360, rotateZ:-360, type:"spring", swiftness:2000}}
-            transition={{duration:1000, ease:"linear", repeat: Infinity}}
+            animate={{rotateY:0, rotateX:0, rotateZ:360}}
+            transition={{duration:500, repeat: Infinity, ease: 'linear'}}
             />
         </motion.group>
     )

@@ -87,7 +87,7 @@ export default function Sobre(props) {
             return (
             <div className="actionSentence_no_bg" key={pageNumber}>
                 <p>Projetos</p>
-                <img className="doubleArrow" src={setaDir} alt="Seta dupla para a direita."/>
+                <img className="doubleArrow" src={setaDir} alt="Seta para a direita."/>
                 <button className="projectsButton" onClick={() =>{setPage('projetos')}}>
                     <Canvas style={{width:100, height:100}} className="projectButtonCanvas">
                         <OrthographicCamera makeDefault position={[0,0,10]} zoom={30} far={-1} near={1000}>
