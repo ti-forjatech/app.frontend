@@ -72,7 +72,7 @@ export default function Contato(){
                     </p>
                 </div>
                 <div className="contactFormWrapper">
-                    <form action='http://15.228.226.51/contato/enviar' method='POST'>
+                    <form action='#' method='POST'>
                         {/* <div className="inputOrganizer">
                             <label className="labelForContactInput" for="contactNome">Nome</label>
                             <input type="text" className="contactInput" name="contactNome"/>
