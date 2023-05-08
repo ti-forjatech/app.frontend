@@ -5,6 +5,7 @@ import setaDir from './seta_dir.svg'
 import './sobre.css';
 import { Canvas } from '@react-three/fiber';
 import { OrthographicCamera } from "@react-three/drei";
+import { motion } from 'framer-motion';
 
 export default function Sobre(props) {
     const setPage = props.setPage
@@ -142,7 +143,8 @@ export default function Sobre(props) {
         return (
         <div id={pageNumber} className="page" key={page_index}>
             <div className="top">
-                {pageTitle}
+                <motion.span
+                initial={{transform:'translateX(-100px)'}} transition={{delay:2}} whileInView={{transform:'translateX(0)'}} viewport={{once:true}}>{pageTitle}</motion.span>
                 <svg className="seta_dir" width="11" height="18" viewBox="0 0 11 18" xmlns="http://www.w3.org/2000/svg">
 <path d="M4.09586 17.2572L10.2995 10.7602C10.5216 10.5282 10.6977 10.2525 10.8179 9.94906C10.9381 9.6456 11 9.3203 11 8.99177C11 8.66324 10.9381 8.33793 10.8179 8.03448C10.6977 7.73102 10.5216 7.45537 10.2995 7.2233L4.09586 0.726378C2.58686 -0.82887 0 0.274855 0 2.50739V15.4761C0 17.7338 2.58686 18.8375 4.09586 17.2572Z" />
                 </svg>

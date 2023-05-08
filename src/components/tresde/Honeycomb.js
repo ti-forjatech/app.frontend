@@ -12,6 +12,30 @@ export default function Honeycomb(props) {
   const { nodes } = useGLTF(model);
   const comb = useRef()
 
+  const container = {
+    hidden:{x:0},
+    show:{
+      x:0,
+      transition:{
+        duration:1.5,
+        staggerChildren: 0.5,
+      }
+    }
+  }
+
+  const item = {
+    hidden:{x:-100},
+    show:{
+      x:0,
+      transition:{
+        type:'spring',
+        bounce:0.1,
+        duration:2.5,
+        mass: .4
+      }
+    }
+  }
+
   return (
     <motion.group dispose={null}>
       <Stars count={1000} factor={16} fade={true} depth={100} />
@@ -30,51 +54,58 @@ export default function Honeycomb(props) {
         <meshStandardMaterial metalness={.8} roughness={.05} color={'#FFFF00'} fog={true}/>
       </motion.mesh>
 
-      <Text ref={comb}
-      scale={.02}
-      fontSize={20}
-      maxWidth={150}
-      letterSpacing={.1}
-      lineHeight={1}
-      textAlign="center"
-      anchorX={"center"}
-      anchorY={"middle"}
-      position={[0,.68,(props.planeScale - 1.5)]}
-      outlineOffsetX={'0%'}
-      outlineOffsetY={'4%'}
-      outlineBlur={2}
-      outlineOpacity={0.8}
-      outlineColor="#000000"
-      // font={font}
-      color={"#FF0"}
-      receiveShadow
-      castShadow
-      >
-      Desenvolvimento de software personalizado
-      </Text>
+      <motion.group variants={container} initial="hidden" animate="show" dispose={null}>
+        <motion.group variants={item}>
+          <Text ref={comb}
+          scale={.02}
+          fontSize={20}
+          maxWidth={150}
+          letterSpacing={.1}
+          lineHeight={1}
+          textAlign="center"
+          anchorX={"center"}
+          anchorY={"middle"}
+          position={[0,.68,(props.planeScale - 1.5)]}
+          outlineOffsetX={'0%'}
+          outlineOffsetY={'4%'}
+          outlineBlur={2}
+          outlineOpacity={0.8}
+          outlineColor="#000000"
+          // font={font}
+          color={"#FF0"}
+          receiveShadow
+          castShadow
+          >
+          Desenvolvimento de software personalizado
+          </Text>
+        </motion.group>
 
-      <Text ref={comb}
-      scale={.02}
-      fontSize={10}
-      maxWidth={180}
-      textAlign="center"
-      anchorX={"center"}
-      anchorY={"middle"}
-      position={[0,-.5,(props.planeScale - 1)]}
-      outlineOffsetX={'0%'}
-      outlineOffsetY={'4%'}
-      outlineBlur={2}
-      outlineOpacity={0.8}
-      letterSpacing={.02}
-      lineHeight={1.2}
-      outlineColor="#000000"
-      font={font}
-      color={"#FFF"}
-      receiveShadow
-      castShadow
-      >
-      Soluções que podem potencializar o seu negócio.
-      </Text>
+        <motion.group variants={item}>
+          <Text ref={comb}
+          scale={.02}
+          fontSize={10}
+          maxWidth={180}
+          textAlign="center"
+          anchorX={"center"}
+          anchorY={"middle"}
+          position={[0,-.5,(props.planeScale - 1)]}
+          outlineOffsetX={'0%'}
+          outlineOffsetY={'4%'}
+          outlineBlur={2}
+          outlineOpacity={0.8}
+          letterSpacing={.02}
+          lineHeight={1.2}
+          outlineColor="#000000"
+          font={font}
+          color={"#FFF"}
+          receiveShadow
+          castShadow
+          >
+          Soluções que podem potencializar o seu negócio.
+          </Text>
+        </motion.group>
+
+      </motion.group>
 
       <Text ref={comb}
       scale={.03}
