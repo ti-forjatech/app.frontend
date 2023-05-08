@@ -13,6 +13,7 @@ div.logoWrapper{
         background-color:rgba(44,44,44,.6);
         border-radius: 4px;
         border-radius: 4px;
+        overflow: hidden;
         z-index: 2; //A segunda camada é para acomodar os elementos que estao acima do background.
         // box-shadow:inset 0px 0px .5px .5px $base_color;
         
