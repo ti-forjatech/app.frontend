@@ -3,6 +3,9 @@ import './contato.css';
 
 export default function Contato(){
 
+    // const fetch = require('https');
+    console.log(fetch)
+
     const [email, setEmail] = useState(null)
     const [message, setMessage] = useState(null)
     const [mailSent, setMailSent] = useState(false)
@@ -47,7 +50,7 @@ export default function Contato(){
             body: JSON.stringify({"email_contact":email, "email_msg":message})
         }
 
-        const response = await fetch('https://15.228.226.51/contato/enviar', options)
+        const response = await fetch('http://15.228.226.51/contato/enviar', options)
         const jsonData = await response.json()
         if(jsonData.success === "ok") {
             setMailSent(true)
