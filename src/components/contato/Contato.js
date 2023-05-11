@@ -3,9 +3,6 @@ import './contato.css';
 
 export default function Contato(){
 
-    // const fetch = require('https');
-    console.log(fetch)
-
     const [email, setEmail] = useState(null)
     const [message, setMessage] = useState(null)
     const [mailSent, setMailSent] = useState(false)
