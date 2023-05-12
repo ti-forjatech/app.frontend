@@ -1,9 +1,14 @@
 import React, {useState} from 'react';
+import { motion } from 'framer-motion';
 import './contato.css';
 
 export default function Contato(){
     const [mailSent, setMailSent] = useState(false)
     const [feedbackMessage] = useState("Seu contato foi enviado com sucesso!")
+    const feedbackMessageVariants = {
+        hidden:{opacity:0, x:-50},
+        show:{opacity:1, x:0}
+    }
 
     const handleSendForm = (e) => {
         e.preventDefault();
@@ -25,7 +30,19 @@ export default function Contato(){
     }
 
     const FeedbackComponent = () => {
-        return <p className="feedbackMessage">{feedbackMessage}</p>
+        return <motion.p className="feedbackMessage"
+        variants={feedbackMessageVariants}
+        initial={"hidden"}
+        animate={"show"}
+        transition={{type:'spring', duration:2}}
+        onAnimationComplete={definition=>{
+            if(definition === 'show'){
+                setTimeout(() =>{
+                    setMailSent(false);
+                }, 2000)
+            }
+        }}
+        >{feedbackMessage}</motion.p>
     }
 
     return (
@@ -39,7 +56,8 @@ export default function Contato(){
                     </p>
                 </div>
                 <div className="contactFormWrapper">
-                    <form name="contact" action='/' method='POST' onSubmit={handleSendForm}>
+                {mailSent ? <FeedbackComponent/> : 
+                    <motion.form initial={{opacity:0}} animate={{opacity:1}} transition={{type:'spring', duration:2}} name="contact" action='/' method='POST' onSubmit={handleSendForm}>
                     <input type="hidden" name="form-name" value="contact" />
                         <div className="inputOrganizer">
                             <label className="labelForContactInput" htmlFor="contactEmail">Email</label>
@@ -49,9 +67,9 @@ export default function Contato(){
                             <label className="labelForContactInput" htmlFor="contactMensagem">Mensagem</label>
                             <textarea type="text" className="contactInput contactInputMessage" name="contactMensagem"/>
                         </div>
-                    {mailSent ? <FeedbackComponent/> : "" }
                         <input type="submit" className="enviarBtn"value="Enviar"/>
-                    </form>
+                    </motion.form>
+                     }
                 </div>
                 <p className="social_label">links para contato</p>
                 <div className="social">
