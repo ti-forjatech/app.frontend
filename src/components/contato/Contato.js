@@ -69,19 +69,12 @@ export default function Contato(){
                     </p>
                 </div>
                 <div className="contactFormWrapper">
-                    <form action='#' method='POST' netlify>
-                        {/* <div className="inputOrganizer">
-                            <label className="labelForContactInput" for="contactNome">Nome</label>
-                            <input type="text" className="contactInput" name="contactNome"/>
-                        </div> */}
+                    <form name="contact" method='POST'>
+                    <input type="hidden" name="form-name" value="contact" />
                         <div className="inputOrganizer">
                             <label className="labelForContactInput" htmlFor="contactEmail">Email</label>
-                            <input type="text" className="contactInput contactInputContact" name="contactEmail"/>
+                            <input type="email" className="contactInput contactInputContact" name="contactEmail"/>
                         </div>
-                        {/* <div className="inputOrganizer">
-                            <label className="labelForContactInput" for="contactTelefone">Telefone</label>
-                            <input type="text" className="contactInput" name="contactTelefone"/>
-                        </div> */}
                         <div className="inputOrganizer">
                             <label className="labelForContactInput" htmlFor="contactMensagem">Mensagem</label>
                             <textarea type="text" className="contactInput contactInputMessage" name="contactMensagem"/>
