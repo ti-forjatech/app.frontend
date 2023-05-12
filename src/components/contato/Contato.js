@@ -1,62 +1,32 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './contato.css';
 
 export default function Contato(){
+    const [mailSent, setMailSent] = useState(false)
+    const [feedbackMessage] = useState("Seu contato foi enviado com sucesso!")
 
-    // const [email, setEmail] = useState(null)
-    // const [message, setMessage] = useState(null)
-    // const [mailSent, setMailSent] = useState(false)
-    // const [feedbackMessage] = useState("Seu contato foi enviado com sucesso!")
+    const handleSendForm = (e) => {
+        e.preventDefault();
+        sendEmail(e.target)
+    }
 
-    // const handleSendForm = (e) => {
-    //     e.preventDefault();
-    //     const contactValue = e.target.form.querySelector(".contactInputContact").value
-    //     const messageValue = e.target.form.querySelector(".contactInputMessage").value
-    //     setEmail(contactValue)
-    //     setMessage(messageValue)
-    // }
+    function sendEmail(form){
+        console.log("start")
+        const formData = new FormData(form);
+        const options = {
+            method: "POST",
+            headers: {"Content-Type": "application/x-www-form-urlencoded"},
+            body: new URLSearchParams(formData).toString()
+        }
 
-    // useEffect(() => {
-    //     let dataValidate = {}
-    //     let data = {}
+        fetch('/', options)
+        .then(()=>{ setMailSent(true)})
+        .catch(err=>{ alert("Error: " + err)})
+    }
 
-    //     if(email !== null && email !== undefined && email !== ""){
-    //         data.email_contact = email
-    //         dataValidate.email = true
-    //     }
-
-    //     if(message !== null && message !== undefined && message !== ""){
-    //         data.email_msg = message
-    //         dataValidate.message = true
-    //     }
-
-    //     if(dataValidate.email && dataValidate.message){
-    //         sendEmail(data.email_contact, data.email_msg)
-    //     }
-
-    // }, [email, message, mailSent]);
-
-    // async function sendEmail(email, message){
-    //     const options = {
-    //         method: "POST",
-    //         mode: "cors",
-    //         cache: "no-cache",
-    //         headers: {
-    //             "Content-Type": "application/json",
-    //         },
-    //         body: JSON.stringify({"email_contact":email, "email_msg":message})
-    //     }
-
-    //     const response = await fetch('http://15.228.226.51/contato/enviar', options)
-    //     const jsonData = await response.json()
-    //     if(jsonData.success === "ok") {
-    //         setMailSent(true)
-    //     }
-    // }
-
-    // const FeedbackComponent = () => {
-    //     return <p className="feedbackMessage">{feedbackMessage}</p>
-    // }
+    const FeedbackComponent = () => {
+        return <p className="feedbackMessage">{feedbackMessage}</p>
+    }
 
     return (
         <section className="contato">
@@ -69,7 +39,7 @@ export default function Contato(){
                     </p>
                 </div>
                 <div className="contactFormWrapper">
-                    <form name="contact" method='POST'>
+                    <form name="contact" method='POST' onSubmit={handleSendForm}>
                     <input type="hidden" name="form-name" value="contact" />
                         <div className="inputOrganizer">
                             <label className="labelForContactInput" htmlFor="contactEmail">Email</label>
@@ -79,9 +49,9 @@ export default function Contato(){
                             <label className="labelForContactInput" htmlFor="contactMensagem">Mensagem</label>
                             <textarea type="text" className="contactInput contactInputMessage" name="contactMensagem"/>
                         </div>
-                        <input type="submit" className="enviarBtn"value="Enviar" />
+                    {mailSent ? <FeedbackComponent/> : "" }
+                        <input type="submit" className="enviarBtn"value="Enviar"/>
                     </form>
-                    {/* {mailSent ? <FeedbackComponent/> : "" } */}
                 </div>
                 <p className="social_label">links para contato</p>
                 <div className="social">

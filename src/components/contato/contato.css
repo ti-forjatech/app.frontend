@@ -84,6 +84,7 @@ section.contato div.container div.contactFormWrapper form div.inputOrganizer tex
 }
 
 section.contato div.container div.contactFormWrapper form input.enviarBtn {
+  cursor: pointer;
   width: 100%;
   height: 64px;
   margin: 32px 0;
