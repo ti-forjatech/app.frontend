@@ -39,7 +39,7 @@ export default function Contato(){
                     </p>
                 </div>
                 <div className="contactFormWrapper">
-                    <form name="contact" method='POST' onSubmit={handleSendForm}>
+                    <form name="contact" action='/' method='POST' onSubmit={handleSendForm}>
                     <input type="hidden" name="form-name" value="contact" />
                         <div className="inputOrganizer">
                             <label className="labelForContactInput" htmlFor="contactEmail">Email</label>
