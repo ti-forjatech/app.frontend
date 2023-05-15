@@ -7,7 +7,6 @@ import Footer from './components/footer/Footer';
 import BtnTopo from './components/btnTopo/BtnTopo';
 import Projetos from './components/projetos_/Projetos_';
 import {useInView} from 'framer-motion'
-import { createClient } from 'contentful';
 import './App.css';
 
 function App() {
