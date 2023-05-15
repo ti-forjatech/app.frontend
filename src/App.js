@@ -11,15 +11,6 @@ import { createClient } from 'contentful';
 import './App.css';
 
 function App() {
-  const client = createClient({
-    space: process.env.forjaTechCONTENTFUL_SPACE_ID,
-    accessToken: process.env.forjaTechIS_PREVIEW === "true" ?
-      process.env.forjaTechCONTENTFUL_PREVIEW_TOKEN :
-      process.env.forjaTechCONTENTFUL_DELIVERY_TOKEN
-  })
-  
-  // Alternatively you can use the CDN API as follows...
-  const baseUrl = process.env.forjaTechIS_PREVIEW === "true" ? "preview.contentful.com" : "cdn.contentful.com"
   const container = useRef(null)
   const refSobre = useRef(null)
   const isInView = useInView(
