@@ -13,10 +13,6 @@ button.btn {
   border-radius: 4px;
 }
 
-div.logoWrapper {
-  border: solid 1px #FFFF00;
-}
-
 div.logoWrapper .logoContainer {
   -webkit-box-shadow: 0 1px 4px black;
           box-shadow: 0 1px 4px black;
