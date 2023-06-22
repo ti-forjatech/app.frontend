@@ -9,6 +9,7 @@ import Projetos from './components/projetos_/Projetos_';
 import {useInView} from 'framer-motion'
 import './App.css';
 
+//qqq
 function App() {
   const container = useRef(null)
   const refSobre = useRef(null)
